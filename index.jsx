@@ -16,6 +16,7 @@ import rajeshImage from './assets/images/presenters/rajesh.jpg';
 import rperkinsImage from './assets/images/presenters/rperkins.png';
 import vsenoImage from './assets/images/presenters/vseno.png';
 import yeressianImage from './assets/images/presenters/yeressian.jpg';
+import ScaleUpLogo from './assets/images/other/ScaleUPv6_ElCoMoN_logo.svg'
 
 // --- PLACEHOLDER DATA ---
 // I've added a 'description' field for items that should be clickable.
@@ -1026,6 +1027,7 @@ const Header = () => (
     <header style={styles.header}>
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <div style={styles.headerTextWrapper}>
+              <img src={ScaleUpLogo}/>
                 <h1 style={styles.logo}>
                     ScaleUp
                     <span style={{
