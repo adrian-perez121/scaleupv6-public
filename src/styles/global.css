@@ -1,0 +1,295 @@
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: url('../../assets/font/Pokemon Solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root { /* Dark theme variables */
+  --bg-color: #0a0a1a;
+  --primary-color: #00bfff;
+  --secondary-color: #ff00ff;
+  --text-color: #e0e0e0;
+  --card-bg: #1a1a2e;
+  --border-color: #3a3a5e;
+  --logo-color: #fff;
+  --header-text-color: #e0e0e0;
+  --header-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--secondary-color), 0 0 30px #fff;
+  --title-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--secondary-color);
+  --modal-overlay-bg: rgba(10, 10, 26, 0.9);
+  --banner-overlay-bg: rgba(10, 10, 26, 0.7);
+  --card-hover-shadow-primary: 0 10px 20px rgba(0, 191, 255, 0.2);
+  --card-hover-shadow-secondary: 0 10px 20px rgba(255, 0, 255, 0.2);
+  --modal-shadow: 0 0 30px rgba(0, 191, 255, 0.3);
+  --theme-gradient: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  --keynote-bg: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(255, 0, 255, 0.1));
+  --note-color: var(--secondary-color);
+  --footer-text-color: rgba(224, 224, 224, 0.7);
+}
+body[data-theme='light'] {
+  /* Pokémon palette (one blue, one yellow, plus reds):
+     Blue #3B4CCA, Yellow (Xanthophyll) #B3A125, Digital Red #FF0000, Russian Red #CC0000 */
+  --bg-color: #3B4CCA;
+  --primary-color: #B3A125;
+  --secondary-color: #CC0000;
+  --text-color: #1a1a1a;
+  --card-title-color: #f8cf11; /* agenda titles + speaker names */
+  --card-title-outline: 2px 0px 0 #6faadd, 1.85px 0.77px 0 #6faadd, 1.41px 1.41px 0 #6faadd, 0.77px 1.85px 0 #6faadd, 0px 2px 0 #6faadd, -0.77px 1.85px 0 #6faadd, -1.41px 1.41px 0 #6faadd, -1.85px 0.77px 0 #6faadd, -2px 0px 0 #6faadd, -1.85px -0.77px 0 #6faadd, -1.41px -1.41px 0 #6faadd, -0.77px -1.85px 0 #6faadd, -0px -2px 0 #6faadd, 0.77px -1.85px 0 #6faadd, 1.41px -1.41px 0 #6faadd, 1.85px -0.77px 0 #6faadd; /* 2px light-blue outline on those titles */
+  --card-bg: #f8f3d6;
+  --border-color: #3B4CCA;
+  --logo-color: #3B4CCA;
+  --header-text-color: #1a1a1a;
+  /* Pokémon-logo look: blue letters with a yellow outline */
+  --header-shadow: -3px -3px 0 #B3A125, 3px -3px 0 #B3A125, -3px 3px 0 #B3A125, 3px 3px 0 #B3A125, 0 5px 0 #B3A125;
+  --title-shadow: 2px 2px 0 #3B4CCA;
+  --modal-overlay-bg: rgba(59, 76, 202, 0.85);
+  --banner-overlay-bg: rgba(248, 243, 214, 0.78);
+  --card-hover-shadow-primary: 0 10px 20px rgba(179, 161, 37, 0.4);
+  --card-hover-shadow-secondary: 0 10px 20px rgba(204, 0, 0, 0.3);
+  --modal-shadow: 0 0 30px rgba(179, 161, 37, 0.5);
+  --theme-gradient: linear-gradient(90deg, #CC0000, #B3A125);
+  --keynote-bg: linear-gradient(135deg, rgba(59, 76, 202, 0.25), rgba(179, 161, 37, 0.18));
+  --note-color: #CC0000;
+  --footer-text-color: rgba(255, 255, 255, 0.85);
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+h1, h2, h3 {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-shadow: var(--title-shadow);
+}
+.agenda-item-clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow-primary);
+}
+.speaker-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--card-hover-shadow-secondary);
+}
+
+#keynote-speakers {
+  background: var(--keynote-bg);
+}
+
+.agenda-item-animate, .speaker-card-animate, .workshop-item-animate {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.agenda-item-animate.is-visible, .speaker-card-animate.is-visible, .workshop-item-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.content-section:not(:last-of-type)::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  height: 2px;
+  background-image: linear-gradient(to right, 
+    transparent, 
+    var(--primary-color), 
+    var(--secondary-color),
+    transparent
+  );
+  opacity: 0.5;
+  filter: blur(1px);
+}
+.agenda-location-link {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  transition: color 0.2s ease;
+}
+.agenda-location-link:hover {
+  color: var(--primary-color) !important;
+  text-decoration-style: solid;
+}
+.workshop-leads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2rem;
+  max-width: 750px;
+  margin: 0 auto;
+  justify-content: center;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  header {
+    padding: 2rem 1rem !important;
+  }
+  
+  header .container > div {
+    padding: 1rem !important;
+  }
+  
+  .header-logo { font-size: 2rem !important; }
+  
+  section {
+    padding: 3rem 0 !important;
+  }
+  
+  h2.section-title {
+    font-size: 2rem !important;
+  }
+  
+  .agenda-headline {
+    white-space: normal !important;
+  }
+  
+  /* Agenda Section */
+  .agenda-title-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    margin-bottom: 3rem !important;
+    min-height: auto !important;
+  }
+  
+  .agenda-register-button {
+    transform: rotate(0) !important;
+  }
+  
+  .agenda-register-button:hover {
+    transform: scale(1.05) !important;
+  }
+  
+  #agenda ul > li {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  #agenda li > div.agenda-time-wrapper {
+    flex-basis: auto !important;
+  }
+  
+  /* Speaker Sections */
+  .speaker-card {
+    width: 100% !important;
+    max-width: 350px;
+  }
+  
+  #keynote-speakers .speaker-card {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .keynote-speaker-img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  .workshop-leads-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Floating Buttons */
+  .back-to-top-button, .theme-toggle-button, .weather-widget-button {
+    width: 48px !important;
+    height: 48px !important;
+    left: 1rem !important;
+  }
+  
+  .back-to-top-button {
+    right: 1rem !important;
+    left: auto !important;
+    bottom: 5rem !important;
+  }
+  
+  .theme-toggle-button {
+    bottom: 1rem !important;
+    right: 1rem !important;
+    left: auto !important;
+  }
+
+  .visibility-toggle-button {
+    bottom: 1rem !important;
+    left: 1rem !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .weather-widget-button {
+    top: 1rem !important;
+    left: 1rem !important;
+    bottom: auto !important;
+  }
+
+  /* Timer Button */
+  .timer-button {
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Modal */
+  .modal-content {
+    width: 95% !important;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  /* Footer */
+  .footer-content-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+  .footer-content-wrapper > div { /* Targets the footer text container */
+    text-align: center !important;
+  }
+
+  /* Chat Window Mobile */
+  .chat-window {
+    width: auto !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    bottom: 9rem !important;
+    height: 45vh !important;
+    max-width: none !important;
+  }
+  
+  .chat-input {
+    font-size: 16px !important; /* Prevent auto-zoom on iOS inputs */
+  }
+  
+  .chat-toggle-button {
+    bottom: 5rem !important;
+    left: 1rem !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+}

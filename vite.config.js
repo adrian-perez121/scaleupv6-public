@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { EVENT_TITLE } from './src/config.js';
 
 export default defineConfig(() => {
     return {
@@ -7,6 +8,13 @@ export default defineConfig(() => {
         port: 3000,
         host: '0.0.0.0',
       },
-      plugins: [react()]
+      plugins: [
+        react(),
+        // Fills %EVENT_TITLE% in index.html from src/config.js
+        {
+          name: 'event-title-html',
+          transformIndexHtml: (html) => html.replace(/%EVENT_TITLE%/g, EVENT_TITLE),
+        },
+      ]
     };
 });

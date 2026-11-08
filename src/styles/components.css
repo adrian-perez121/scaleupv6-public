@@ -1,0 +1,576 @@
+/*
+ * Component styles (converted from the old inline `styles` object).
+ * Loaded after global.css so these base rules keep the same precedence the
+ * inline styles had over the non-!important responsive rules.
+ */
+
+/* --- Header --- */
+.site-header {
+  position: relative;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: url('../../assets/images/other/PokemonBanner.jpg') no-repeat center center;
+  background-size: cover;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+}
+.header-container {
+  position: relative;
+  z-index: 1;
+}
+.header-text-wrapper {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--banner-overlay-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.header-logo {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: clamp(2rem, 8vw, 4rem);
+  margin: 0;
+  color: var(--logo-color);
+  text-shadow: var(--header-shadow);
+  text-transform: none;
+}
+.header-subtitle {
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+  margin: 0.25rem 0 0 0;
+  color: var(--header-text-color);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.header-theme {
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  margin: 0.5rem 0;
+  font-weight: 700;
+  font-family: 'Pokemon Solid', sans-serif;
+  background: var(--theme-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Sections --- */
+.section {
+  padding: 4rem 0;
+  position: relative;
+}
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.section-title-tight {
+  margin-bottom: 0.5rem;
+}
+/* All page section headings share the card-title look */
+h2.section-title {
+  color: var(--card-title-color, var(--primary-color));
+  text-shadow: var(--card-title-outline, var(--title-shadow));
+}
+.section-title-separator {
+  height: 4px;
+  width: 100px;
+  background: var(--theme-gradient);
+  margin: 0 auto 3rem auto;
+  border-radius: 2px;
+}
+.section-subtitle-link {
+  text-align: center;
+  color: #ffffff;
+  margin: 0 auto 1rem auto;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* --- Agenda --- */
+.agenda-title-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 8vw, 6rem);
+  margin-bottom: 1.5rem;
+  min-height: auto;
+}
+.agenda-headline {
+  margin: 0;
+  white-space: nowrap;
+}
+.agenda-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.agenda-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+  cursor: default;
+}
+.agenda-item-clickable {
+  cursor: pointer;
+}
+.agenda-time-wrapper {
+  flex: 0 0 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.agenda-time {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-family: 'Pokemon Solid', sans-serif;
+  margin-bottom: 0.25rem;
+}
+.agenda-location {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+.agenda-title {
+  text-shadow: var(--card-title-outline, none);
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--card-title-color, var(--text-color));
+}
+.agenda-speaker {
+  margin: 0.25rem 0 0;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  white-space: pre-line;
+}
+
+/* --- Workshops --- */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.workshop-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.workshop-thead {
+  background: var(--card-bg);
+}
+.workshop-th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  color: var(--primary-color);
+  font-family: 'Pokemon Solid', sans-serif;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 1.1rem;
+}
+.workshop-th-type { width: 10%; }
+.workshop-th-title { width: 50%; }
+.workshop-th-location { width: 15%; }
+.workshop-th-presenter { width: 25%; }
+.workshop-tr {
+  transition: background-color 0.3s, opacity 0.6s, transform 0.6s;
+  background: var(--card-bg);
+}
+.workshop-item-animate:hover {
+  background-color: var(--border-color);
+}
+.workshop-td {
+  padding: 1.25rem 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.workshop-td-type {
+  color: var(--primary-color);
+  font-family: 'Pokemon Solid', sans-serif;
+}
+.workshop-td-centered {
+  text-align: center;
+}
+.booth-fair {
+  padding: 1rem 0;
+}
+.booth-fair-title {
+  font-family: 'Pokemon Solid', sans-serif;
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+.booth-fair-text {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* --- Speakers --- */
+.keynote-speakers-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.keynote-speaker-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  padding: 3rem 2rem;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, opacity 0.6s ease-out;
+  cursor: pointer;
+  width: 400px;
+}
+.keynote-speaker-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+.workshop-speaker-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, opacity 0.6s ease-out;
+  cursor: pointer;
+  width: 280px;
+}
+.speaker-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+/* Poké Ball ring around speaker photos: red top, black center band, white bottom */
+.keynote-speaker-img,
+.speaker-img {
+  border: 6px solid transparent;
+  background:
+    linear-gradient(var(--border-color), var(--border-color)) padding-box,
+    linear-gradient(to bottom,
+      #FF0000 0%, #FF0000 45%,
+      #000000 45%, #000000 55%,
+      #ffffff 55%, #ffffff 100%) border-box;
+  box-shadow: 0 0 0 2px #000000;
+}
+.speaker-name {
+  text-shadow: var(--card-title-outline, none);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: var(--card-title-color, var(--text-color));
+}
+.speaker-title {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+  color: var(--footer-text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+.footer-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-logo {
+  width: 150px;
+  height: auto;
+  filter: brightness(1.5);
+  opacity: 1;
+}
+.footer-text {
+  flex: 1;
+  text-align: left;
+}
+.footer-paragraph {
+  margin: 0 0 1rem 0;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--modal-overlay-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  position: relative;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  max-width: 600px;
+  width: 90%;
+  box-shadow: var(--modal-shadow);
+  animation: fadeIn 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-title {
+  font-size: 2rem;
+  text-align: left;
+  text-shadow: 0 0 5px var(--primary-color);
+}
+.modal-speaker-title {
+  text-align: left;
+  margin: -1rem 0 1.5rem 0;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+.modal-description {
+  line-height: 1.6;
+  opacity: 0.9;
+  white-space: pre-wrap;
+}
+
+/* --- Floating buttons --- */
+.back-to-top-button {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  box-shadow: 0 0 15px var(--primary-color);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+.back-to-top-button.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top-button:hover {
+  box-shadow: 0 0 25px var(--primary-color);
+}
+
+.theme-toggle-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.theme-toggle-button:hover {
+  box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.visibility-toggle-button {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #CC0000; /* Poké Ball red */
+  color: #ffffff;
+  border: 3px solid #ffffff; /* White border for high visibility */
+  cursor: pointer;
+  z-index: 1010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+.visibility-toggle-button:hover {
+  transform: scale(1.1);
+}
+
+/* --- Timer widget --- */
+.timer-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1005;
+  box-shadow: 0 0 15px rgba(179, 161, 37, 0.4);
+  transition: all 0.3s ease;
+}
+.timer-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--primary-color);
+}
+.timer-modal-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  box-shadow: 0 0 30px var(--primary-color);
+  max-width: 90%;
+  width: 340px;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+.widget-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.widget-title-spaced {
+  margin-bottom: 1rem;
+}
+.widget-separator {
+  width: 60px;
+  height: 3px;
+  background: var(--theme-gradient);
+  margin: 0 auto 1.5rem auto;
+  border-radius: 2px;
+}
+.timer-message {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+.timer-survey {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.timer-survey-text {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+.exit-survey-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--secondary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.exit-survey-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/* --- Date widget --- */
+.weather-widget-button {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1005;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.weather-widget-button:hover {
+  box-shadow: 0 0 25px var(--secondary-color);
+}
+.weather-modal-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  box-shadow: 0 0 30px var(--primary-color);
+  max-width: 90%;
+  width: 450px;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+.date-message {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* --- Confetti --- */
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
