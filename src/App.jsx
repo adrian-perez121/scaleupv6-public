@@ -12,9 +12,26 @@ import ThemeToggleButton from './components/ThemeToggleButton';
 import TimerWidget from './components/TimerWidget';
 import DateWidget from './components/DateWidget';
 import VisibilityControl from './components/VisibilityControl';
+import SectionTabs from './components/SectionTabs';
 import openMapWindow from './utils/openMapWindow';
 
+const TABS = [
+  { id: 'keynote-speakers', label: 'Keynote Speakers' },
+  { id: 'agenda', label: 'Agenda' },
+  { id: 'workshops', label: 'Workshops' },
+  { id: 'speakers', label: 'Workshop Leads & Faculty' },
+];
+
+// The active tab lives in the URL hash so links like /#agenda and the
+// browser back button keep working.
+const tabFromHash = () => {
+  const id = window.location.hash.slice(1);
+  return TABS.some(tab => tab.id === id) ? id : TABS[0].id;
+};
+
 const App = () => {
+  const [activeTab, setActiveTab] = useState(tabFromHash);
+  const tabsRef = useRef(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [theme, setTheme] = useState('light');
   const [uiVisible, setUiVisible] = useState(true);
@@ -23,6 +40,28 @@ const App = () => {
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const onHashChange = () => setActiveTab(tabFromHash());
+    window.addEventListener('hashchange', onHashChange);
+    window.addEventListener('popstate', onHashChange);
+    return () => {
+      window.removeEventListener('hashchange', onHashChange);
+      window.removeEventListener('popstate', onHashChange);
+    };
+  }, []);
+
+  const handleTabChange = (id) => {
+    if (id === activeTab) return;
+    setActiveTab(id);
+    window.history.pushState(null, '', `#${id}`);
+    // If the user has scrolled past the header, bring the new tab's content
+    // into view from the top instead of leaving them mid-page.
+    const tabsTop = tabsRef.current?.offsetTop ?? 0;
+    if (window.scrollY > tabsTop) {
+      window.scrollTo({ top: tabsTop, behavior: 'smooth' });
+    }
+  };
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
@@ -52,11 +91,20 @@ const App = () => {
   return (
     <>
       <Header />
-      <main>
-        <KeynoteSpeakers onItemClick={handleItemClick} onOpenMap={openMap} />
-        <Agenda onItemClick={handleItemClick} onOpenMap={openMap} />
-        <Workshops onOpenMap={openMap} />
-        <WorkshopLeads onItemClick={handleItemClick} />
+      <div ref={tabsRef} className="section-tabs-anchor">
+        <SectionTabs tabs={TABS} activeId={activeTab} onChange={handleTabChange} />
+      </div>
+      <main
+        id={`panel-${activeTab}`}
+        role="tabpanel"
+        aria-labelledby={`tab-${activeTab}`}
+        className="section-tab-panel"
+        key={activeTab}
+      >
+        {activeTab === 'keynote-speakers' && <KeynoteSpeakers onItemClick={handleItemClick} onOpenMap={openMap} />}
+        {activeTab === 'agenda' && <Agenda onItemClick={handleItemClick} onOpenMap={openMap} />}
+        {activeTab === 'workshops' && <Workshops onOpenMap={openMap} />}
+        {activeTab === 'speakers' && <WorkshopLeads onItemClick={handleItemClick} />}
       </main>
       <Footer />
       <Modal item={selectedItem} onClose={handleCloseModal} />

@@ -6,7 +6,7 @@ const Header = () => (
     <header className="site-header">
         <div className="container header-container">
             <div className="header-text-wrapper">
-              <img src={ScaleUpLogo}/>
+              <img src={ScaleUpLogo} alt="ScaleUPv6 ElCoMoN" className="header-banner-logo" />
                 <h1 className="header-logo">
                     {EVENT_TITLE}
                 </h1>

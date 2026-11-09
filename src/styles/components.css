@@ -20,6 +20,7 @@
 }
 .header-text-wrapper {
   display: inline-block;
+  max-width: 100%;
   padding: 1rem 2rem;
   background-color: var(--banner-overlay-bg);
   border-radius: 12px;
@@ -27,6 +28,14 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+/* Logo image scales down with the screen instead of overflowing/clipping */
+.header-banner-logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 .header-logo {
   font-family: 'Pokemon Solid', sans-serif;
@@ -275,6 +284,7 @@ h2.section-title {
   color: var(--card-title-color, var(--text-color));
 }
 .speaker-title {
+  font-family: 'Pokemon Classic';
   margin: 0;
   color: var(--primary-color);
   font-size: 0.9rem;
@@ -573,4 +583,410 @@ h2.section-title {
   height: 100%;
   pointer-events: none;
   z-index: 9999;
+}
+
+/* --- Pokédex palette (same in light and dark themes) --- */
+:root {
+  --pokedex-red: #ff0055;
+  --pokedex-red-dark: #c40042;
+  --pokedex-line: #000;
+  --pokedex-bezel: #ffffff;
+  --pokedex-screen: #98cb98;
+  --pokedex-screen-hover: #8abf8a;
+  --pokedex-screen-text: #1a1a1a;
+}
+
+/* --- Section tabs (Pokédex top panel) --- */
+.section-tabs-anchor {
+  position: relative;
+  z-index: 1;
+}
+.section-tabs {
+  /* The whole full-width bar is the Pokédex panel */
+  background: var(--pokedex-red);
+  border-top: 3px solid var(--pokedex-line);
+  border-bottom: 3px solid var(--pokedex-line);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.25);
+  /* Side padding keeps the content clear of the fixed date/timer corner buttons */
+  padding: 0.4rem 6rem 0;
+  overflow: hidden; /* clips the black lines that run out to the screen edges */
+}
+/* Grid: lens on the left (two rows tall), a diagonal joining the low line
+   under the lens to the high line under the lights, tabs hanging below. */
+.pokedex {
+  display: grid;
+  grid-template-columns: 88px 32px 1fr;
+  grid-template-rows: 40px 40px auto;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 0.9rem;
+}
+.pokedex-lens-zone {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solid var(--pokedex-line);
+}
+.pokedex-lens {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #3298cb;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 3px var(--pokedex-line);
+}
+.pokedex-lens::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #85bdda;
+}
+.pokedex-slope {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.pokedex-slope line {
+  stroke: var(--pokedex-line);
+  stroke-width: 3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+.pokedex-lights {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 4px;
+  border-bottom: 3px solid var(--pokedex-line);
+  position: relative;
+}
+/* Extend the low line left and the high line right to the screen edges */
+.pokedex-lens-zone::before,
+.pokedex-lights::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  width: 100vw;
+  height: 3px;
+  background: var(--pokedex-line);
+}
+.pokedex-lens-zone::before { right: 100%; }
+.pokedex-lights::after { left: 100%; }
+.pokedex-light {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--pokedex-line);
+}
+.pokedex-light::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+}
+.pokedex-light-red { background: #ff0000; }
+.pokedex-light-yellow { background: #fecb65; }
+.pokedex-light-green { background: #32cb65; }
+
+/* Tabs hang from the line under the lights like folder tabs */
+.pokedex-tabs {
+  grid-column: 3;
+  grid-row: 2 / 4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0 0.75rem 0 1rem;
+}
+.section-tab {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.45rem 1.1rem 0.55rem;
+  border: 3px solid var(--pokedex-line);
+  border-top: 0;
+  border-radius: 0 0 12px 12px;
+  background: var(--pokedex-red-dark);
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, padding 0.2s ease;
+}
+.section-tab:hover {
+  background: #e0004c;
+}
+.section-tab:focus-visible {
+  outline: 3px solid #fecb65;
+  outline-offset: 2px;
+}
+.section-tab.is-active {
+  background: #ffcb05;
+  color: #1a1a1a;
+  padding-bottom: 0.8rem; /* active tab hangs a little lower */
+}
+.section-tab-panel {
+  animation: fadeIn 0.3s ease;
+}
+/* Small gap above the section when following a deep link (/#agenda) */
+.section-tab-panel .section {
+  scroll-margin-top: 1rem;
+}
+
+/* Below ~1100px the four hanging tabs no longer fit on one line, so they
+   move under the whole head as a 2x2 grid of buttons. */
+@media (max-width: 1100px) {
+  .pokedex-tabs {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.75rem 0 0;
+  }
+  .section-tab {
+    border-top: 3px solid var(--pokedex-line);
+    border-radius: 10px;
+    padding: 0.55rem 0.5rem;
+  }
+  .section-tab.is-active {
+    padding-bottom: 0.55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-tabs {
+    padding: 0.3rem 1rem 0;
+  }
+  .pokedex {
+    grid-template-columns: 72px 28px 1fr;
+    grid-template-rows: 32px 32px auto;
+  }
+  .pokedex-lens {
+    width: 44px;
+    height: 44px;
+    border-width: 3px;
+  }
+  .pokedex-lens::after {
+    top: 5px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+  }
+  .section-tab {
+    font-size: 0.85rem;
+    white-space: normal;
+  }
+}
+
+/* --- Sticky footer: short tabs keep the footer at the bottom of the window --- */
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+#root > .section-tab-panel {
+  flex: 1 0 auto;
+}
+#root > .site-footer {
+  margin-top: 0;
+}
+
+/* Active section stretches to fill leftover height (tall/vertical screens),
+   so its background runs down to the footer and content stays centered. */
+#root > .section-tab-panel {
+  display: flex;
+  flex-direction: column;
+}
+.section-tab-panel > .section {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Pokédex body: red frame, white bezel, green screen cards --- */
+.section-tab-panel > .section {
+  background: var(--pokedex-red) !important; /* beats #keynote-speakers bg */
+  padding: 2rem 0 !important; /* beats the mobile `section` padding rule */
+}
+.section-tab-panel > .section > .container {
+  position: relative;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(100% - 3rem);
+  max-width: 1200px;
+  padding: 2.75rem 2rem 4rem;
+  background: var(--pokedex-bezel);
+  border: 3px solid var(--pokedex-line);
+  border-radius: 16px 16px 16px 64px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+}
+/* Two small red lights centered at the top of the bezel */
+.section-tab-panel > .section > .container::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 14px;
+  background: radial-gradient(circle, #e00000 0 4.5px, var(--pokedex-line) 4.5px 6px, transparent 6.5px) 0 0 / 18px 14px repeat-x;
+}
+/* Big red button bottom-left, speaker grill bottom-right */
+.section-tab-panel > .section > .container::after {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 1rem;
+  height: 30px;
+  background:
+    radial-gradient(circle at 15px 15px, #e00000 0 11px, var(--pokedex-line) 11px 13.5px, transparent 14px) left center / 30px 30px no-repeat,
+    repeating-linear-gradient(to bottom, var(--pokedex-line) 0 3px, transparent 3px 6px) right center / 44px 27px no-repeat;
+  pointer-events: none;
+}
+
+/* Headings and links sit on the white bezel */
+.section-tab-panel .section-subtitle-link {
+  color: var(--pokedex-screen-text);
+}
+
+/* Screen cards */
+.section-tab-panel .agenda-item,
+.section-tab-panel .keynote-speaker-card,
+.section-tab-panel .workshop-speaker-card {
+  background: var(--pokedex-screen);
+  border: 3px solid var(--pokedex-line);
+  border-radius: 12px;
+  color: var(--pokedex-screen-text);
+}
+.section-tab-panel .agenda-speaker,
+.section-tab-panel .speaker-title {
+  color: var(--pokedex-screen-text);
+}
+.section-tab-panel .agenda-time {
+  color: #2a3a9e;
+}
+.section-tab-panel .agenda-location {
+  color: #b00000;
+}
+
+/* Workshops table as one screen */
+.section-tab-panel .workshop-table {
+  border: 3px solid var(--pokedex-line);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  color: var(--pokedex-screen-text);
+}
+.section-tab-panel .workshop-thead,
+.section-tab-panel .workshop-tr {
+  background: var(--pokedex-screen);
+}
+.section-tab-panel .workshop-th {
+  color: #2a3a9e;
+  border-bottom: 3px solid var(--pokedex-line);
+}
+.section-tab-panel .workshop-td {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+.section-tab-panel .workshop-td-type,
+.section-tab-panel .booth-fair-title {
+  color: #2a3a9e;
+}
+.section-tab-panel .workshop-item-animate:hover {
+  background-color: var(--pokedex-screen-hover);
+}
+
+@media (max-width: 768px) {
+  .section-tab-panel > .section {
+    padding: 1rem 0 !important;
+  }
+  .section-tab-panel > .section > .container {
+    width: calc(100% - 2rem);
+    padding: 2.5rem 1rem 3.75rem;
+    border-radius: 14px 14px 14px 44px;
+  }
+  .section-tab-panel > .section > .container::after {
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 0.75rem;
+  }
+}
+
+/* Yellow card titles get a dark-blue outline so they read on the green screen.
+   Section headings (KEYNOTE SPEAKERS, etc.) use the same treatment. */
+.section-tab-panel h2.section-title,
+.section-tab-panel .agenda-title,
+.section-tab-panel .speaker-name {
+  color: #ffcb05;
+  text-shadow: 2px 0 0 #2a3a9e, -2px 0 0 #2a3a9e, 0 2px 0 #2a3a9e, 0 -2px 0 #2a3a9e,
+    1.4px 1.4px 0 #2a3a9e, -1.4px 1.4px 0 #2a3a9e, 1.4px -1.4px 0 #2a3a9e, -1.4px -1.4px 0 #2a3a9e;
+}
+
+/* Phones: workshops table becomes stacked cards so nothing is cut off */
+@media (max-width: 768px) {
+  .table-scroll {
+    overflow-x: visible;
+  }
+  .section-tab-panel .workshop-table,
+  .section-tab-panel .workshop-table tbody {
+    display: block;
+    width: 100%;
+    border: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .section-tab-panel .workshop-thead {
+    display: none;
+  }
+  .section-tab-panel .workshop-tr {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--pokedex-screen);
+    border: 3px solid var(--pokedex-line);
+    border-radius: 12px;
+  }
+  .section-tab-panel .workshop-td {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.25);
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+  .section-tab-panel .workshop-td:first-child {
+    border-top: 0;
+  }
+  .section-tab-panel .workshop-td[data-label]::before {
+    content: attr(data-label);
+    font-family: 'Pokemon Solid', sans-serif;
+    color: #2a3a9e;
+  }
+  /* Booth fair row spans the full card */
+  .section-tab-panel .workshop-td-centered {
+    display: block;
+    text-align: center;
+  }
 }
