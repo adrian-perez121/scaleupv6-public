@@ -4,6 +4,8 @@ import { EVENT_TITLE } from './src/config.js';
 
 export default defineConfig(() => {
     return {
+      // GitHub Pages serves this repo from /scaleupv6-public/, not from the domain root
+      base: '/scaleupv6-public/',
       server: {
         port: 3000,
         host: '0.0.0.0',
