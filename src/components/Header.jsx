@@ -11,7 +11,6 @@ const Header = () => (
                     {EVENT_TITLE}
                 </h1>
                 <p className="header-subtitle">Hosted by El Camino College</p>
-                <p className="header-theme">AI³: Imagine, Innovate, Inspire</p>
             </div>
         </div>
     </header>

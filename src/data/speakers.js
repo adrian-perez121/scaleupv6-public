@@ -11,6 +11,7 @@ import rperkinsImage from '../../assets/images/presenters/rperkins.png';
 import vsenoImage from '../../assets/images/presenters/vseno.png';
 import yeressianImage from '../../assets/images/presenters/yeressian.jpg';
 
+
 export const allSpeakers = [
   { name: 'Rajesh Boppana', title: 'Principal Solutions Architect at Microchip', img: rajeshImage, description: `I am passionate about leveraging cutting-edge technologies to drive innovation and empower others through knowledge sharing. With over 20 years of experience in the IT industry, I specialize in Generative AI, Machine Learning, and Solution Architecture, focusing on designing and implementing enterprise-scale AI solutions. 
 

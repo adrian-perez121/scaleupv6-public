@@ -46,7 +46,6 @@ const Workshops = ({ onOpenMap }) => {
           <table className="workshop-table">
             <thead className="workshop-thead">
               <tr>
-                <th className="workshop-th workshop-th-type">Workshop</th>
                 <th className="workshop-th workshop-th-title">Title</th>
                 <th className="workshop-th workshop-th-location">Location</th>
                 <th className="workshop-th workshop-th-presenter">Presenter</th>
@@ -58,7 +57,6 @@ const Workshops = ({ onOpenMap }) => {
                   key={index}
                   className="workshop-tr workshop-item-animate"
                 >
-                  <td className="workshop-td workshop-td-type" data-label="Workshop">{item.type}</td>
                   <td className="workshop-td" data-label="Title">{item.title}</td>
                   <td className="workshop-td" data-label="Location">{item.location}</td>
                   <td className="workshop-td" data-label="Presenter">{item.instructor}</td>
