@@ -5,7 +5,7 @@ export const workshopItems = [
   { title: 'City of Torrance Application Writing and Interview Preparation Workshop', location: 'Room #107', instructor: 'Human Resources Technician, Nico Pietrantonio' },
   { title: 'AI Revolution: The New Reality', location: 'Room #110', instructor: 'ECC Student, Muhammad Usmon' },
   { title: 'Data Science 101', location: 'Room #202', instructor: 'Professors, Emma Niu & Solomon Russell' },
-  { title: 'CIS 101', location: 'Room #204', instructor: 'Professor, Jesus Rubio' },
+  { title: 'CIS 101', location: 'Room #304', instructor: 'Professor, Jesus Rubio' },
   { title: 'Building Apps and Media with Google AI Studio', location: 'Room #206', instructor: 'Professor, Hac Le' },
   { title: 'Hackerman', location: 'Room #208', instructor: 'Professor, Martin Anaya' },
   { title: '3D Printers and Humanoid Robotics', location: 'Room #306', instructor: 'Professor, Room #306', instructor: 'Professor Joe Weichmann' },

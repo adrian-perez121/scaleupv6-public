@@ -10,7 +10,6 @@ import Modal from './components/Modal';
 import BackToTopButton from './components/BackToTopButton';
 import ThemeToggleButton from './components/ThemeToggleButton';
 import TimerWidget from './components/TimerWidget';
-import DateWidget from './components/DateWidget';
 import VisibilityControl from './components/VisibilityControl';
 import SectionTabs from './components/SectionTabs';
 import openMapWindow from './utils/openMapWindow';
@@ -116,12 +115,6 @@ const App = () => {
         visible={uiVisible}
         isOpen={activeWidget === 'timer'}
         onToggle={(isOpen) => setActiveWidget(isOpen ? 'timer' : null)}
-      />
-      
-      <DateWidget 
-        visible={uiVisible}
-        isOpen={activeWidget === 'date'}
-        onToggle={(isOpen) => setActiveWidget(isOpen ? 'date' : null)}
       />
       
       <VisibilityControl isVisible={uiVisible} onToggle={handleUiToggle} />
