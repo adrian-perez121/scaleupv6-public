@@ -13,6 +13,7 @@ import katherineQImage from "../../assets/images/presenters/kquintanilla.jpeg";
 import martinAImage from "../../assets/images/presenters/manaya.png";
 import baiyiZImage from "../../assets/images/presenters/bzhou.jpg";
 import annetteVImage from "../../assets/images/presenters/avilla.jpeg";
+import muhammadU from "../../assets/images/presenters/musmon.jpeg";
 import ElCoBotImage from "../../assets/images/presenters/ScaleUPv6_CaminobotProfilePic.png";
 
 
@@ -53,8 +54,12 @@ John holds degrees in finance, business administration (MBA), and law. Despite h
 
 { name: 'Joe Weichmann', title: "Robotics Professor at El Camino College", img: ElCoBotImage, description: 'TBA'},
 { name: 'Martin Anaya', title: 'CIS Professor at El Camino College', img: martinAImage, description: 'TBA' },
-{ name: 'Baiyi Zhou', title: "Student at El Camino College", img: baiyiZImage, description: 'TBA'},
-{ name: 'Annette Villa', title: "Student at El Camino College", img: annetteVImage, description: 'TBA' }
+{ name: 'Baiyi Zhou', title: "Student at El Camino College", img: baiyiZImage, description: `Hi, I'm Baiyi! I'm a second-year Computer Science and Engineering major, as well as the president of both the Robotics Club and the Computing & Cybersecurity Club. I'm planning to transfer to a UC next fall.
+If anyone is interested in joining either club, feel free to reach out to me or join our Discords! :D
+• Robotics Club: https://discord.gg/8DeXA8xCdP
+• Computing & Cybersecurity Club: https://discord.gg/VNjcEKQqkE` },
+{ name: 'Annette Villa', title: "Student at El Camino College", img: annetteVImage, description: 'Annette Villa is a second-year student at El Camino College majoring in Manufacturing Engineering. For the past 2 semesters, she has worked as a Teaching Assistant for the CIS Department, determined to find problems to troubleshoot and ways to help students succeed. Previously, Annette was a part of the Google AI Micro-Internship cohort in Fall 2025 where she remotely worked with a team of California community college students and a Google mentor. Together, they utilized and fine-tuned an AI model to create an investment banking app prototype using Google AI Studio. Along with her background in Tech, she is also passionate in hands-on work and the process of creating tangible products, from designing to manufacturing. Her hobbies and skills include CADD modeling in Catia, SolidWorks, and AutoCAD, 3D Printing, designing and drafting, and casual illustration.' },
+{ name: 'Muhammad Usmon', title: "Cloud Computing Student at El Camino College", img: muhammadU, description: 'Started using AI when ChatGPT was first released for my ESL classes to learn better writing and explaining my thoughts in English, slowly making it my everyday tool for learning new skills, planning my projects, and solving complex problems through hands-on projects involving AI-powered software development, digital forensics, application modernization, automation, and content production. My experience focuses on using AI as a smart project manager, turning any random small idea into detailed discussion about the nuances and practical development and problem-solving partner to turn the ideas into real-world projects.'}
 
 ];
 
