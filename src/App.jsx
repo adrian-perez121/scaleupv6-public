@@ -8,9 +8,7 @@ import WorkshopLeads from './components/WorkshopLeads';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
 import BackToTopButton from './components/BackToTopButton';
-import ThemeToggleButton from './components/ThemeToggleButton';
 import TimerWidget from './components/TimerWidget';
-import VisibilityControl from './components/VisibilityControl';
 import SectionTabs from './components/SectionTabs';
 import openMapWindow from './utils/openMapWindow';
 
@@ -32,8 +30,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState(tabFromHash);
   const tabsRef = useRef(null);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [theme, setTheme] = useState('light');
-  const [uiVisible, setUiVisible] = useState(true);
+  const [theme] = useState('light');
   const [activeWidget, setActiveWidget] = useState(null);
 
   useEffect(() => {
@@ -62,10 +59,6 @@ const App = () => {
     }
   };
 
-  const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
-  };
-
   const handleItemClick = (item) => {
     setSelectedItem(item);
   };
@@ -74,14 +67,9 @@ const App = () => {
     setSelectedItem(null);
   };
 
-  const handleUiToggle = () => {
-    if (uiVisible) {
-        // If we are hiding the UI, also close any active widgets
-        setActiveWidget(null);
-    }
-    setUiVisible(!uiVisible);
-  };
-  
+  // Top of the Pokédex (the tab bar), used by the back-to-top button
+  const getPokedexTop = () => tabsRef.current?.offsetTop ?? 0;
+
   const openMap = (e) => {
     e.stopPropagation();
     openMapWindow(theme);
@@ -108,16 +96,15 @@ const App = () => {
       <Footer />
       <Modal item={selectedItem} onClose={handleCloseModal} />
       
-      <BackToTopButton onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} visible={uiVisible} />
-      <ThemeToggleButton onClick={toggleTheme} isDarkMode={theme === 'dark'} visible={uiVisible} />
-      
-      <TimerWidget 
-        visible={uiVisible}
+      <BackToTopButton
+        getTop={getPokedexTop}
+        onClick={() => window.scrollTo({ top: getPokedexTop(), behavior: 'smooth' })}
+      />
+
+      <TimerWidget
         isOpen={activeWidget === 'timer'}
         onToggle={(isOpen) => setActiveWidget(isOpen ? 'timer' : null)}
       />
-      
-      <VisibilityControl isVisible={uiVisible} onToggle={handleUiToggle} />
     </>
   );
 };

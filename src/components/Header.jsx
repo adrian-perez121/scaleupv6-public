@@ -10,7 +10,7 @@ const Header = () => (
                 <h1 className="header-logo">
                     {EVENT_TITLE}
                 </h1>
-                <p className="header-subtitle">Friday November 20, 2026 at El Camino College</p>
+                <p className="header-subtitle">Friday, November 20, 2026 <br /> El Camino College</p>
             </div>
         </div>
     </header>

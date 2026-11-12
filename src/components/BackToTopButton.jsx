@@ -1,32 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import arrowUpIcon from '../../assets/images/other/arrow-up.svg';
 
-const BackToTopButton = ({ onClick, visible }) => {
+// Appears once the page is scrolled past `getTop()` (the top of the Pokédex)
+const BackToTopButton = ({ onClick, getTop }) => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
-  };
-
   useEffect(() => {
+    const toggleVisibility = () => setIsVisible(window.pageYOffset > getTop() + 100);
+    toggleVisibility();
     window.addEventListener('scroll', toggleVisibility);
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
-
-  const shouldShow = isVisible && visible;
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, [getTop]);
 
   return (
     <button
       onClick={onClick}
-      aria-label="Go to top"
-      className={`back-to-top-button${shouldShow ? ' is-shown' : ''}`}
+      aria-label="Back to top of the Pokédex"
+      className={`back-to-top-button${isVisible ? ' is-shown' : ''}`}
     >
-      &#8679;
+      <img src={arrowUpIcon} alt="" className="widget-icon" />
     </button>
   );
 };

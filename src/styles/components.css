@@ -530,113 +530,57 @@ h2.section-title {
   padding: 1rem 1.25rem;
 }
 
-/* --- Floating buttons --- */
-.back-to-top-button {
+/* --- Floating buttons: same flat Pokédex look as the tabs (hard shadow, no glow) --- */
+.back-to-top-button,
+.timer-button {
   position: fixed;
-  bottom: 6rem;
-  right: 2rem;
-  background: var(--primary-color);
-  color: var(--bg-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
+  bottom: 2rem;
   width: 50px;
   height: 50px;
-  font-size: 24px;
+  background: var(--pokedex-red-dark);
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.901);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+.back-to-top-button:hover,
+.timer-button:hover {
+  background: #a30036;
+}
+.widget-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  filter: invert(1); /* black SVGs turn white so they read on the dark red */
+}
+.back-to-top-button {
+  right: 2rem;
   z-index: 1001;
-  box-shadow: 0 0 15px var(--primary-color);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
 }
 .back-to-top-button.is-shown {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
-.back-to-top-button:hover {
-  box-shadow: 0 0 25px var(--primary-color);
-}
-
-.theme-toggle-button {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--card-bg);
-  color: var(--primary-color);
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1001;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-.theme-toggle-button:hover {
-  box-shadow: 0 0 25px var(--secondary-color);
-}
-
-.visibility-toggle-button {
-  position: fixed;
-  bottom: 2rem;
-  left: 2rem;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #CC0000; /* Poké Ball red */
-  color: #ffffff;
-  border: 3px solid #ffffff; /* White border for high visibility */
-  cursor: pointer;
-  z-index: 1010;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(204, 0, 0, 0.5);
-  transition: all 0.3s ease;
-}
-.visibility-toggle-button:hover {
-  transform: scale(1.1);
-}
-
-/* --- Timer widget --- */
+/* Survey button, bottom left */
 .timer-button {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background: var(--card-bg);
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  left: 2rem;
   z-index: 1005;
-  box-shadow: 0 0 15px rgba(179, 161, 37, 0.4);
-  transition: all 0.3s ease;
-}
-.timer-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px var(--primary-color);
 }
 .timer-modal-content {
   margin: auto; /* stays centered now that the overlay no longer uses align-items */
   background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
-  border: 1px solid var(--primary-color);
+  border: 3px solid #000;
   text-align: center;
-  box-shadow: 0 0 30px var(--primary-color);
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.901);
   max-width: 90%;
   width: 340px;
   position: relative;
@@ -688,7 +632,6 @@ h2.section-title {
 }
 .exit-survey-link:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px var(--secondary-color);
 }
 
 /* --- Confetti --- */

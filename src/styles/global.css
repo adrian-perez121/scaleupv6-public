@@ -220,45 +220,18 @@ h1, h2, h3 {
   }
   
   /* Floating Buttons */
-  .back-to-top-button, .theme-toggle-button, .weather-widget-button {
-    width: 48px !important;
-    height: 48px !important;
-    left: 1rem !important;
+  .back-to-top-button, .timer-button {
+    width: 44px !important;
+    height: 44px !important;
+    bottom: 1rem !important;
   }
-  
   .back-to-top-button {
     right: 1rem !important;
-    left: auto !important;
-    bottom: 5rem !important;
   }
-  
-  .theme-toggle-button {
-    bottom: 1rem !important;
-    right: 1rem !important;
-    left: auto !important;
-  }
-
-  .visibility-toggle-button {
-    bottom: 1rem !important;
-    left: 1rem !important;
-    width: 48px !important;
-    height: 48px !important;
-  }
-
-  .weather-widget-button {
-    top: 1rem !important;
-    left: 1rem !important;
-    bottom: auto !important;
-  }
-
-  /* Timer Button */
   .timer-button {
-    top: 1rem !important;
-    right: 1rem !important;
-    width: 40px !important;
-    height: 40px !important;
+    left: 1rem !important;
   }
-  
+
   /* Footer */
   .footer-content-wrapper {
     flex-direction: column !important;
