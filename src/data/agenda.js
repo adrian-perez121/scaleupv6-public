@@ -1,6 +1,6 @@
 export const agendaItems = [
   { time: '8:30 AM - 9:30 AM', location: 'Gymnasium Lobby', title: 'Check-In and Badge Distribution' },
-  { time: '9:30 AM - 9:40 AM', location: 'Gymnasium', title: 'Welcome Remarks', speaker: 'Katie Sundara, Acting Dean of Business, Design & Applied Technology @ El Camino College\nRichard Perkins, Computer Information Systems Professor @ El Camino College' },
+  { time: '9:30 AM - 9:40 AM', location: 'Gymnasium', title: 'Welcome Remarks', speaker: 'Katie Sundara, Acting Dean of Business, Design & Applied Technology @ El Camino College & Richard Perkins, Computer Information Systems Professor @ El Camino College' },
   { time: '9:40 AM - 10:00 AM', location: 'Gymnasium', title: 'Keynote 1', speaker: 'Katherine Quintanilla, Software Engineer @ JPMorgan Chase' },
   { time: '10:00 AM - 10:20 AM', location: 'Gymnasium', title: 'Keynote 2', speaker: 'Cristian Gonzales, Senior Software Engineer @ Microsoft' },
   { time: '10:20 AM - 10:50 AM', location: 'Gymnasium', title: 'Industry Q&A Panel' },

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { agendaItems } from '../data/agenda';
 
-const Agenda = ({ onItemClick, onOpenMap }) => {
+const Agenda = ({ onOpenMap }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -36,20 +36,8 @@ const Agenda = ({ onItemClick, onOpenMap }) => {
           </h2>
         </div>
         <ul className="agenda-list">
-          {agendaItems.map((item, index) => {
-            const isClickable = !!item.description;
-            const classNames = [
-              'agenda-item',
-              isClickable ? 'agenda-item-clickable' : null,
-              'agenda-item-animate',
-            ].filter(Boolean).join(' ');
-
-            return (
-              <li
-                key={index}
-                className={classNames}
-                onClick={() => isClickable && onItemClick(item)}
-              >
+          {agendaItems.map((item, index) => (
+              <li key={index} className="agenda-item agenda-item-animate">
                 <div className="agenda-time-wrapper">
                   <div className="agenda-time">{item.time}</div>
                   <div 
@@ -63,10 +51,10 @@ const Agenda = ({ onItemClick, onOpenMap }) => {
                 <div>
                   <h3 className="agenda-title">{item.title}</h3>
                   {item.speaker && <p className="agenda-speaker">{item.speaker}</p>}
+                  {item.description && <p className="agenda-description">{item.description}</p>}
                 </div>
               </li>
-            );
-          })}
+          ))}
         </ul>
       </div>
     </section>

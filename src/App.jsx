@@ -101,7 +101,7 @@ const App = () => {
         key={activeTab}
       >
         {activeTab === 'keynote-speakers' && <KeynoteSpeakers onItemClick={handleItemClick} onOpenMap={openMap} />}
-        {activeTab === 'agenda' && <Agenda onItemClick={handleItemClick} onOpenMap={openMap} />}
+        {activeTab === 'agenda' && <Agenda onOpenMap={openMap} />}
         {activeTab === 'workshops' && <Workshops onOpenMap={openMap} />}
         {activeTab === 'speakers' && <WorkshopLeads onItemClick={handleItemClick} />}
       </main>

@@ -126,9 +126,6 @@ h2.section-title {
   transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
   cursor: default;
 }
-.agenda-item-clickable {
-  cursor: pointer;
-}
 .agenda-time-wrapper {
   flex: 0 0 150px;
   display: flex;
@@ -154,11 +151,18 @@ h2.section-title {
   color: var(--card-title-color, var(--text-color));
 }
 .agenda-speaker {
+  font-family: 'Poppins', sans-serif;
   margin: 0.25rem 0 0;
   color: var(--text-color);
   font-size: 0.9rem;
   opacity: 0.8;
   white-space: pre-line;
+}
+.agenda-description {
+  font-family: 'Poppins', sans-serif;
+  margin: 0.5rem 0 0;
+  color: var(--text-color);
+  font-size: 0.9rem;
 }
 
 /* --- Workshops --- */
@@ -913,11 +917,11 @@ h2.section-title {
 .section-tab-panel .agenda-item,
 .section-tab-panel .keynote-speaker-card,
 .section-tab-panel .workshop-speaker-card,
-.section-tab-panel .agenda-item-clickable:hover,
 .section-tab-panel .speaker-card:hover {
   box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.901);
 }
 .section-tab-panel .agenda-speaker,
+.section-tab-panel .agenda-description,
 .section-tab-panel .speaker-title {
   color: var(--pokedex-screen-text);
 }

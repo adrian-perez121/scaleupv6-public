@@ -90,10 +90,6 @@ h1, h2, h3 {
   color: var(--primary-color);
   text-shadow: var(--title-shadow);
 }
-.agenda-item-clickable:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-hover-shadow-primary);
-}
 .speaker-card:hover {
     transform: scale(1.03);
     box-shadow: var(--card-hover-shadow-secondary);
