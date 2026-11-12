@@ -266,8 +266,6 @@ h1, h2, h3 {
   /* Modal */
   .modal-content {
     width: 95% !important;
-    max-height: 85vh;
-    overflow-y: auto;
   }
 
   /* Footer */
