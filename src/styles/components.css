@@ -202,6 +202,28 @@ h2.section-title {
 .workshop-tr-clickable {
   cursor: pointer;
 }
+/* Elcobot column: light-blue screen box (like the speaker popup) inside the table */
+.workshop-th-bot { width: 88px; padding-right: 0; }
+.workshop-td-bot {
+  padding: 0.6rem 0 0.6rem 1rem;
+}
+.workshop-bot-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: #a8e0f5;
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.901);
+}
+.workshop-bot {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
 .workshop-info {
   white-space: nowrap;
 }
@@ -393,6 +415,18 @@ h2.section-title {
   flex: 1 1 0;
   min-width: 0;
 }
+/* Workshop bot: its screen box is a quarter of the popup width */
+.modal-top > .modal-device-screen-bot {
+  flex: 0 0 25%;
+  padding: 0.5rem;
+}
+.modal-bot-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
 .modal-top-info {
   overflow-wrap: anywhere;
 }
@@ -410,6 +444,10 @@ h2.section-title {
   .modal-top {
     flex-direction: column;
     align-items: stretch;
+  }
+  .modal-top > .modal-device-screen-bot {
+    flex: 0 0 auto;
+    width: 40%; /* a quarter would be tiny on a phone */
   }
   .modal-content {
     /* keeps the overhanging X inside the screen (no sideways scroll) */
@@ -981,6 +1019,15 @@ h2.section-title {
   border-radius: 12px;
   color: var(--pokedex-screen-text);
 }
+/* round the corner cells so square row backgrounds don't poke past the table's rounded border */
+.section-tab-panel .workshop-th,
+.section-tab-panel .workshop-td {
+  background: inherit;
+}
+.section-tab-panel .workshop-th:first-child { border-top-left-radius: 9px; }
+.section-tab-panel .workshop-th:last-child { border-top-right-radius: 9px; }
+.section-tab-panel .workshop-tbody-last-row > td:first-child { border-bottom-left-radius: 9px; }
+.section-tab-panel .workshop-tbody-last-row > td:last-child { border-bottom-right-radius: 9px; }
 .section-tab-panel .workshop-thead,
 .section-tab-panel .workshop-tr {
   background: var(--pokedex-screen);
@@ -1032,6 +1079,20 @@ h2.section-title {
   .table-scroll {
     overflow-x: visible;
   }
+  /* the bot cell sits at the top of the card; hidden for workshops without a bot */
+  .section-tab-panel .workshop-td-bot {
+    display: block;
+    padding: 0.5rem 0 0;
+    border-top: 0;
+  }
+  .workshop-td-bot:empty {
+    display: none !important;
+  }
+  .section-tab-panel .workshop-td-bot + .workshop-td,
+  .section-tab-panel .workshop-td-bot:empty + .workshop-td {
+    border-top: 0;
+  }
+  .workshop-th-bot { display: none; }
   .section-tab-panel .workshop-table,
   .section-tab-panel .workshop-table tbody {
     display: block;

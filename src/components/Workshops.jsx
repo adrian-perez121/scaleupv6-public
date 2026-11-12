@@ -46,6 +46,7 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
           <table className="workshop-table">
             <thead className="workshop-thead">
               <tr>
+                <th className="workshop-th workshop-th-bot" aria-hidden="true"></th>
                 <th className="workshop-th workshop-th-title">Title</th>
                 <th className="workshop-th workshop-th-location">Location</th>
                 <th className="workshop-th workshop-th-presenter">Presenter</th>
@@ -57,6 +58,7 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
                 const hasDetails = !!item.description;
                 const openDetails = () => onItemClick({
                   title: item.title,
+                  bot: item.bot,
                   subtitle: item.instructor,
                   description: item.description,
                 });
@@ -72,6 +74,13 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
                       'aria-label': `${item.title} – view details`,
                     })}
                   >
+                    <td className="workshop-td workshop-td-bot">
+                      {item.bot && (
+                        <span className="workshop-bot-box">
+                          <img src={item.bot} alt="" className="workshop-bot" />
+                        </span>
+                      )}
+                    </td>
                     <td className="workshop-td" data-label="Title">
                       {/* one wrapper so the mobile grid treats title + icon as a single cell */}
                       <span>
@@ -84,7 +93,7 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
                   </tr>
                 );
               })}
-              <tr className="workshop-tr">
+              <tr className="workshop-tr workshop-tbody-last-row">
                 <td colSpan={4} className="workshop-td workshop-td-centered">
                     <div className="booth-fair">
                         <h4 className="booth-fair-title">Booth Fair</h4>

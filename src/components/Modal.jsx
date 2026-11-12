@@ -26,6 +26,11 @@ const Modal = ({ item, onClose }) => {
                 <img src={item.img} alt={item.name} className="speaker-img modal-speaker-img" />
               </div>
             )}
+            {!item.img && item.bot && (
+              <div className="modal-device-screen modal-device-screen-bot">
+                <img src={item.bot} alt="" className="modal-bot-img" />
+              </div>
+            )}
             <div className="modal-top-info">
               <h2 id="modal-title" className="modal-title">
                 {heading}
@@ -33,10 +38,10 @@ const Modal = ({ item, onClose }) => {
               {subtitle && <p className="speaker-title modal-speaker-title">{subtitle}</p>}
             </div>
           </div>
-          {item.img && <div className="modal-device-footer" aria-hidden="true" />}
+          {item.name && <div className="modal-device-footer" aria-hidden="true" />}
           <p className="modal-description">{linkify(item.description)}</p>
-          {/* No photo (workshops): button + grill go at the bottom */}
-          {!item.img && <div className="modal-device-footer" aria-hidden="true" />}
+          {/* Workshops: button + grill go at the bottom */}
+          {!item.name && <div className="modal-device-footer" aria-hidden="true" />}
         </div>
       </div>
     </div>
