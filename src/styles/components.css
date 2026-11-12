@@ -445,9 +445,14 @@ h2.section-title {
     flex-direction: column;
     align-items: stretch;
   }
+  /* blue screen spans the whole popup width with the bot centered */
   .modal-top > .modal-device-screen-bot {
     flex: 0 0 auto;
-    width: 40%; /* a quarter would be tiny on a phone */
+    width: 100%;
+    padding: 1rem;
+  }
+  .modal-bot-img {
+    width: 120px;
   }
   .modal-content {
     /* keeps the overhanging X inside the screen (no sideways scroll) */
@@ -1079,18 +1084,44 @@ h2.section-title {
   .table-scroll {
     overflow-x: visible;
   }
-  /* the bot cell sits at the top of the card; hidden for workshops without a bot */
+  /* the bot floats over the card's top-left corner (like the X on the popup),
+     so it doesn't take up a row of its own */
+  .section-tab-panel .workshop-table,
+  .section-tab-panel .workshop-table tbody {
+    overflow: visible;
+  }
+  .section-tab-panel .workshop-tr {
+    position: relative;
+  }
   .section-tab-panel .workshop-td-bot {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    z-index: 1;
     display: block;
-    padding: 0.5rem 0 0;
+    width: 52px;
+    height: 52px;
+    padding: 0;
     border-top: 0;
+    background: transparent; /* the cell itself must not paint a green box */
   }
   .workshop-td-bot:empty {
     display: none !important;
   }
-  .section-tab-panel .workshop-td-bot + .workshop-td,
-  .section-tab-panel .workshop-td-bot:empty + .workshop-td {
+  .workshop-td-bot .workshop-bot-box {
+    width: 52px;
+    height: 52px;
+  }
+  .workshop-td-bot .workshop-bot {
+    width: 38px;
+    height: 38px;
+  }
+  /* keep the Title label clear of the floating box */
+  .section-tab-panel .workshop-td-bot + .workshop-td {
     border-top: 0;
+  }
+  .section-tab-panel .workshop-td-bot:not(:empty) + .workshop-td {
+    padding-left: 1.5rem;
   }
   .workshop-th-bot { display: none; }
   .section-tab-panel .workshop-table,
