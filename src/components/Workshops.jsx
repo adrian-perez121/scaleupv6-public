@@ -73,8 +73,11 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
                     })}
                   >
                     <td className="workshop-td" data-label="Title">
-                      {item.title}
-                      {hasDetails && <span className="workshop-info" aria-hidden="true"> ⓘ</span>}
+                      {/* one wrapper so the mobile grid treats title + icon as a single cell */}
+                      <span>
+                        {item.title}
+                        {hasDetails && <span className="workshop-info" aria-hidden="true"> ⓘ</span>}
+                      </span>
                     </td>
                     <td className="workshop-td" data-label="Location">{item.location}</td>
                     <td className="workshop-td" data-label="Presenter">{item.instructor}</td>

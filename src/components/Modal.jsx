@@ -1,5 +1,13 @@
 import React from 'react';
 
+// Turns any http(s) URLs in a description into clickable links
+const linkify = (text) =>
+  (text || '').split(/(https?:\/\/[^\s]+)/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="modal-link">{part}</a>
+    ) : part
+  );
+
 const Modal = ({ item, onClose }) => {
   if (!item) return null;
 
@@ -26,7 +34,7 @@ const Modal = ({ item, onClose }) => {
             </div>
           </div>
           {item.img && <div className="modal-device-footer" aria-hidden="true" />}
-          <p className="modal-description">{item.description}</p>
+          <p className="modal-description">{linkify(item.description)}</p>
           {/* No photo (workshops): button + grill go at the bottom */}
           {!item.img && <div className="modal-device-footer" aria-hidden="true" />}
         </div>

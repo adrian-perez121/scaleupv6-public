@@ -303,6 +303,8 @@ h2.section-title {
 
 /* --- Footer --- */
 .site-footer {
+  position: relative;
+  background-color: #7ac6f4;
   padding: 3rem 2rem;
   margin-top: 2rem;
   color: var(--footer-text-color);
@@ -310,11 +312,22 @@ h2.section-title {
   border-top: 1px solid var(--border-color);
 }
 .footer-content-wrapper {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: flex-start;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1.5rem 2rem;
+  /* same panel as the header text box */
+  background-color: var(--banner-overlay-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: var(--header-text-color);
 }
 .footer-logo {
   width: 150px;
@@ -383,6 +396,12 @@ h2.section-title {
 .modal-top-info {
   overflow-wrap: anywhere;
 }
+.modal-link {
+  color: #2a3a9e;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
 /* Workshop popups (no photo footer in between): space between presenter and description */
 .modal-top + .modal-description {
   margin-top: 1.5rem;
