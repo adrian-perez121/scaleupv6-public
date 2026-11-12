@@ -199,7 +199,13 @@ h2.section-title {
   transition: background-color 0.3s, opacity 0.6s, transform 0.6s;
   background: var(--card-bg);
 }
-.workshop-item-animate:hover {
+.workshop-tr-clickable {
+  cursor: pointer;
+}
+.workshop-info {
+  white-space: nowrap;
+}
+.workshop-tr-clickable:hover {
   background-color: var(--border-color);
 }
 .workshop-td {
@@ -336,6 +342,7 @@ h2.section-title {
   justify-content: center;
   /* The whole overlay scrolls, so a tall card is never clipped mid-content */
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 2.5rem 0 2rem;
   z-index: 1020; /* above the floating buttons so they don't cover the card */
 }
@@ -376,10 +383,25 @@ h2.section-title {
 .modal-top-info {
   overflow-wrap: anywhere;
 }
+/* Workshop popups (no photo footer in between): space between presenter and description */
+.modal-top + .modal-description {
+  margin-top: 1.5rem;
+}
 @media (max-width: 480px) {
   .modal-top {
     flex-direction: column;
     align-items: stretch;
+  }
+  .modal-content {
+    /* keeps the overhanging X inside the screen (no sideways scroll) */
+    width: calc(100% - 3rem);
+    padding: 2.25rem 1rem 1.25rem;
+  }
+  .modal-title {
+    font-size: 1.3rem;
+  }
+  .modal-description {
+    padding: 0.85rem 1rem;
   }
 }
 .modal-device-screen {
@@ -955,7 +977,8 @@ h2.section-title {
 .section-tab-panel .booth-fair-title {
   color: #2a3a9e;
 }
-.section-tab-panel .workshop-item-animate:hover {
+.section-tab-panel .workshop-tr-clickable:hover,
+.section-tab-panel .workshop-tr-clickable:focus-visible {
   background-color: var(--pokedex-screen-hover);
 }
 

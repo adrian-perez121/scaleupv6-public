@@ -259,11 +259,6 @@ h1, h2, h3 {
     height: 40px !important;
   }
   
-  /* Modal */
-  .modal-content {
-    width: 95% !important;
-  }
-
   /* Footer */
   .footer-content-wrapper {
     flex-direction: column !important;

@@ -102,7 +102,7 @@ const App = () => {
       >
         {activeTab === 'keynote-speakers' && <KeynoteSpeakers onItemClick={handleItemClick} onOpenMap={openMap} />}
         {activeTab === 'agenda' && <Agenda onOpenMap={openMap} />}
-        {activeTab === 'workshops' && <Workshops onOpenMap={openMap} />}
+        {activeTab === 'workshops' && <Workshops onOpenMap={openMap} onItemClick={handleItemClick} />}
         {activeTab === 'speakers' && <WorkshopLeads onItemClick={handleItemClick} />}
       </main>
       <Footer />

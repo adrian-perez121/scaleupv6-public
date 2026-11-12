@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { workshopItems } from '../data/workshops';
 
-const Workshops = ({ onOpenMap }) => {
+const Workshops = ({ onOpenMap, onItemClick }) => {
   const sectionRef = useRef(null);
   useEffect(() => {
     const currentSection = sectionRef.current;
@@ -52,16 +52,35 @@ const Workshops = ({ onOpenMap }) => {
               </tr>
             </thead>
             <tbody>
-              {workshopItems.map((item, index) => (
-                <tr
-                  key={index}
-                  className="workshop-tr workshop-item-animate"
-                >
-                  <td className="workshop-td" data-label="Title">{item.title}</td>
-                  <td className="workshop-td" data-label="Location">{item.location}</td>
-                  <td className="workshop-td" data-label="Presenter">{item.instructor}</td>
-                </tr>
-              ))}
+              {workshopItems.map((item, index) => {
+                // Only workshops with a description open a popup
+                const hasDetails = !!item.description;
+                const openDetails = () => onItemClick({
+                  title: item.title,
+                  subtitle: item.instructor,
+                  description: item.description,
+                });
+                return (
+                  <tr
+                    key={index}
+                    className={`workshop-tr workshop-item-animate${hasDetails ? ' workshop-tr-clickable' : ''}`}
+                    {...(hasDetails && {
+                      onClick: openDetails,
+                      onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDetails(); } },
+                      tabIndex: 0,
+                      role: 'button',
+                      'aria-label': `${item.title} – view details`,
+                    })}
+                  >
+                    <td className="workshop-td" data-label="Title">
+                      {item.title}
+                      {hasDetails && <span className="workshop-info" aria-hidden="true"> ⓘ</span>}
+                    </td>
+                    <td className="workshop-td" data-label="Location">{item.location}</td>
+                    <td className="workshop-td" data-label="Presenter">{item.instructor}</td>
+                  </tr>
+                );
+              })}
               <tr className="workshop-tr">
                 <td colSpan={4} className="workshop-td workshop-td-centered">
                     <div className="booth-fair">
