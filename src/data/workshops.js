@@ -1,0 +1,22 @@
+import aiBot from '../../assets/images/elcobots/aibot.svg';
+import cloudBot from '../../assets/images/elcobots/cloudbot.svg';
+import caminoBot from '../../assets/images/elcobots/elcobot.svg';
+import networkBot from '../../assets/images/elcobots/networkbot.svg';
+
+// bot: the elcobot shown next to the title. Cybersecurity and coding bots
+// aren't in assets/images/elcobots yet, so those workshops have none for now.
+export const workshopItems = [
+  { title: 'Crack the code: Your First Cybersecurity Competition with the NCL', location: 'Room #102', instructor: 'ECC Students, Baiyi Zhou & Annette Villa', description: 'Attendees will learn what the National Cyber League (NCL) is and how its beginner-friendly season works, from practice challenges to individual and team competitions. They will try a live cryptography challenge, see the skills NCL builds (OSINT, cryptography, forensics, web exploitation, and more), and learn how to join our Spring 2027 NCL team, which placed 1st among California community colleges in Spring 2026.' },
+  { bot: caminoBot, title: 'Real Estate and Technology', location: 'Room #104', instructor: 'Professor, John Yeressian', description: 'Discover how generative AI, machine learning, and automated workflows are revolutionizing real estate from property marketing and legal contract review to predictive investment analysis, where algorithms spot up-and-coming neighborhoods before they hit headlines. This session explores how IoT-enabled smart homes, PropTech ESG software for tracking carbon footprints, and urban tech for climate-resilient cities are reshaping property valuations, while emphasizing that while AI won\'t replace real estate agents, agents using AI will replace those who don\'t by balancing powerful automation with high-touch client trust.'},
+  { bot: aiBot, title: 'Agentic AI Robotics & Physical AI on the Edge', location: 'Room #106', instructor: 'Solutions Architect, Rajesh Boppana' },
+  { bot: networkBot, title: 'City of Torrance Application Writing and Interview Preparation Workshop', location: 'Room #107', instructor: 'Human Resources Technician, Nico Pietrantonio', description: 'Join us for an interactive Application Writing and Interview Preparation workshop led by Nico Pietrantonio, Senior Human Resources Technician with the City of Torrance Civil Service Division. In this session, Nico will introduce students to the world of public service careers in local government and break down the key differences between job applications and resumes. Participants will receive hands on coaching to craft strong, effective applications and gain an inside look at the City of Torrance’s Civil Service hiring process. The workshop then concludes with practical interview preparation strategies designed to help students confidently present their strengths and succeed in gaining employment in local government.' },
+  { bot: aiBot, title: 'AI Revolution: The New Reality', location: 'Room #110', instructor: 'ECC Student, Muhammad Usmon' },
+  { bot: cloudBot, title: 'Data Science 101', location: 'Room #202', instructor: 'Professors, Emma Niu & Solomon Russell' },
+  { bot: cloudBot, title: 'Building Apps and Media with Google AI Studio', location: 'Room #206', instructor: 'Professor, Hac Le', description: 'Learn how to use Google AI Studio to build applications with no coding required. You\'ll also get a brief overview about AI and prompt engineering.'},
+  { title: 'Hackerman', location: 'Room #208', instructor: 'Professor, Martin Anaya', description: 'An introduction to hacking and malware. Guess your own password and become a pro hacker!' },
+  { bot: networkBot, title: 'CIS 101', location: 'Room #304', instructor: 'Professor, Jesus Rubio' },
+  { title: '3D Printers and Humanoid Robotics', location: 'Room #306', instructor: 'Professor, Room #306', instructor: 'Professor Joe Weichmann', description: 'Attendees will learn about how 3D printers are used in robotic systems, including how AI is already being integrated into 3D printers.' },
+  { title: 'Say It, Then Ship It', location: 'Room #308', instructor: 'Senior Software Engineer, Cristian Gonzales' },
+  { bot: caminoBot, title: 'Bots, Credits, Certificates, and Conduct', location: 'Room #310', instructor: 'Dual Enrollment Coordinator, Michelle Arthur' },
+  { bot: caminoBot, title: 'Aerial Drone Safety and Basics', location: 'MBA Lawn Outside', instructor: 'Professor, Richard Perkins' },
+];
