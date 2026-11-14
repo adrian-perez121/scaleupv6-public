@@ -220,7 +220,7 @@ h1, h2, h3 {
   }
   
   /* Floating Buttons */
-  .back-to-top-button, .timer-button {
+  .back-to-top-button, .survey-button {
     width: 44px !important;
     height: 44px !important;
     bottom: 1rem !important;
@@ -228,7 +228,7 @@ h1, h2, h3 {
   .back-to-top-button {
     right: 1rem !important;
   }
-  .timer-button {
+  .survey-button {
     left: 1rem !important;
   }
 

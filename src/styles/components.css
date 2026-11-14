@@ -532,7 +532,7 @@ h2.section-title {
 
 /* --- Floating buttons: same flat Pokédex look as the tabs (hard shadow, no glow) --- */
 .back-to-top-button,
-.timer-button {
+.survey-button {
   position: fixed;
   bottom: 2rem;
   width: 50px;
@@ -549,7 +549,7 @@ h2.section-title {
   transition: background 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 .back-to-top-button:hover,
-.timer-button:hover {
+.survey-button:hover {
   background: #a30036;
 }
 .widget-icon {
@@ -569,11 +569,11 @@ h2.section-title {
   visibility: visible;
 }
 /* Survey button, bottom left */
-.timer-button {
+.survey-button {
   left: 2rem;
   z-index: 1005;
 }
-.timer-modal-content {
+.survey-modal-content {
   margin: auto; /* stays centered now that the overlay no longer uses align-items */
   background: var(--card-bg);
   padding: 2rem;
@@ -600,18 +600,18 @@ h2.section-title {
   margin: 0 auto 1.5rem auto;
   border-radius: 2px;
 }
-.timer-message {
+.survey-message {
   margin: 0 0 1.5rem 0;
   font-size: 1rem;
   color: var(--text-color);
   line-height: 1.6;
 }
-.timer-survey {
+.survey-section {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-color);
 }
-.timer-survey-text {
+.survey-text {
   margin: 0 0 1rem 0;
   font-size: 0.95rem;
   color: var(--text-color);
@@ -667,7 +667,7 @@ h2.section-title {
   border-top: 3px solid var(--pokedex-line);
   border-bottom: 3px solid var(--pokedex-line);
   box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.25);
-  /* Side padding keeps the content clear of the fixed date/timer corner buttons */
+  /* Side padding keeps the content clear of the fixed corner buttons */
   padding: 0.4rem 6rem 0;
   overflow: hidden; /* clips the black lines that run out to the screen edges */
 }

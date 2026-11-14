@@ -8,7 +8,7 @@ import WorkshopLeads from './components/WorkshopLeads';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
 import BackToTopButton from './components/BackToTopButton';
-import TimerWidget from './components/TimerWidget';
+import SurveyWidget from './components/SurveyWidget';
 import SectionTabs from './components/SectionTabs';
 import openMapWindow from './utils/openMapWindow';
 
@@ -101,9 +101,9 @@ const App = () => {
         onClick={() => window.scrollTo({ top: getPokedexTop(), behavior: 'smooth' })}
       />
 
-      <TimerWidget
-        isOpen={activeWidget === 'timer'}
-        onToggle={(isOpen) => setActiveWidget(isOpen ? 'timer' : null)}
+      <SurveyWidget
+        isOpen={activeWidget === 'survey'}
+        onToggle={(isOpen) => setActiveWidget(isOpen ? 'survey' : null)}
       />
     </>
   );
