@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { workshopItems } from '../data/workshops';
+import elcomonBall from '../../assets/images/elcobots/elcomonball.svg';
 
 const Workshops = ({ onOpenMap, onItemClick }) => {
   const sectionRef = useRef(null);
@@ -46,7 +47,9 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
           <table className="workshop-table">
             <thead className="workshop-thead">
               <tr>
-                <th className="workshop-th workshop-th-bot" aria-hidden="true"></th>
+                <th className="workshop-th workshop-th-bot" aria-hidden="true">
+                  <img src={elcomonBall} alt="" className="workshop-th-ball" />
+                </th>
                 <th className="workshop-th workshop-th-title">Title</th>
                 <th className="workshop-th workshop-th-location">Location</th>
                 <th className="workshop-th workshop-th-presenter">Presenter</th>

@@ -204,6 +204,13 @@ h2.section-title {
 }
 /* Elcobot column: light-blue screen box (like the speaker popup) inside the table */
 .workshop-th-bot { width: 88px; padding-right: 0; }
+.workshop-th-ball {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px; /* centers it over the 56px bot boxes below */
+  object-fit: contain;
+}
 .workshop-td-bot {
   padding: 0.6rem 0 0.6rem 1rem;
 }
