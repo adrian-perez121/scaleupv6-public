@@ -19,12 +19,12 @@ const SurveyWidget = ({ isOpen, onToggle }) => {
             <button className="modal-close-button" onClick={() => onToggle(false)}>&times;</button>
             
             <h3 className="section-title widget-title">
-                This Event Has Concluded
+              Feedback Survey!
             </h3>
             <div className="widget-separator"></div>
             
             <p className="survey-message">
-                Thank you for attending {EVENT_TITLE}! We hope you had fun! See you all next year! 
+                This survey is for after the event has concluded. Thank you for attending {EVENT_TITLE}! We hope you had fun! See you all next year! 
             </p>
 
             <div className="survey-section">
