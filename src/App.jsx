@@ -72,7 +72,7 @@ const App = () => {
 
   const openMap = (e) => {
     e.stopPropagation();
-    openMapWindow(theme);
+    openMapWindow();
   };
 
   return (
