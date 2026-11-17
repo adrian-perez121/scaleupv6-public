@@ -15,6 +15,7 @@ import baiyiZImage from "../../assets/images/presenters/bzhou.jpg";
 import annetteVImage from "../../assets/images/presenters/avilla.jpeg";
 import muhammadU from "../../assets/images/presenters/musmon.jpeg";
 import lailaK from "../../assets/images/presenters/lkegler.jpg";
+import solomR from "../../assets/images/presenters/srussell.png";
 import ElCoBotImage from "../../assets/images/presenters/ScaleUPv6_CaminobotProfilePic.png";
 
 
