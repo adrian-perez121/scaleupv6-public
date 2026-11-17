@@ -25,4 +25,5 @@ export const workshopItems = [
   { bot: codingBot, title: 'Say It, Then Ship It', location: 'Room #308', instructor: 'Senior Software Engineer, Cristian Gonzales', description: 'Students learn to code in plain English: through prompting heuristics, describe a business idea, then drive coding agents to bring your idea to life. At the end of this workshop, you\'ll leave with a real, working product that you can call your own, ready to show or sell to the world, along with the skills needed to bring any idea to life. No coding experience required!' },
   { bot: caminoBot, title: 'Bots, Credits, Certificates, and Conduct', location: 'Room #310', instructor: 'Dual Enrollment Coordinator, Michelle Arthur' },
   { bot: caminoBot, title: 'Aerial Drone Safety and Basics', location: 'MBA Lawn Outside', instructor: 'Professor, Richard Perkins' },
+  { bot: caminoBot, title: 'Resume Development [Tech Edition]', location: '???', instructor: 'Career Advisor, Laila Kegler'}
 ];
