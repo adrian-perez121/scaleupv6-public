@@ -5,6 +5,7 @@ import Agenda from './components/Agenda';
 import Workshops from './components/Workshops';
 import KeynoteSpeakers from './components/KeynoteSpeakers';
 import WorkshopLeads from './components/WorkshopLeads';
+import ScavengerHunt from './components/ScavengerHunt';
 import Footer from './components/Footer';
 import Modal from './components/Modal';
 import BackToTopButton from './components/BackToTopButton';
@@ -17,6 +18,7 @@ const TABS = [
   { id: 'agenda', label: 'Agenda' },
   { id: 'workshops', label: 'Workshops' },
   { id: 'speakers', label: 'Workshop Leads & Faculty' },
+  { id: 'scavenger-hunt', label: 'Scavenger Hunt', detached: true },
 ];
 
 // The active tab lives in the URL hash so links like /#agenda and the
@@ -92,6 +94,7 @@ const App = () => {
         {activeTab === 'agenda' && <Agenda onOpenMap={openMap} />}
         {activeTab === 'workshops' && <Workshops onOpenMap={openMap} onItemClick={handleItemClick} />}
         {activeTab === 'speakers' && <WorkshopLeads onItemClick={handleItemClick} />}
+        {activeTab === 'scavenger-hunt' && <ScavengerHunt />}
       </main>
       <Footer />
       <Modal item={selectedItem} onClose={handleCloseModal} />

@@ -330,6 +330,98 @@ h2.section-title {
   font-weight: 400;
 }
 
+/* --- Scavenger hunt --- */
+/* One column: hints start at the top and the user scrolls down through them */
+.hunt-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.hunt-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 700px;
+  padding: 1.25rem;
+  background: var(--pokedex-screen);
+  border: 3px solid var(--pokedex-line);
+  border-radius: 12px;
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.901);
+  color: var(--pokedex-screen-text);
+}
+/* Light-blue screen box, same as the elcobot boxes in the workshops table */
+.hunt-bot-box {
+  flex: 0 0 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  height: 110px;
+  background: #a8e0f5;
+  border: 3px solid #000;
+  border-radius: 12px;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.901);
+}
+.hunt-bot {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+/* Desktop: the bot box stretches to the full height of the card and the bot fills it */
+@media (min-width: 481px) {
+  .hunt-card {
+    align-items: stretch;
+  }
+  .hunt-bot-box {
+    position: relative;
+    flex: 0 0 160px;
+    width: 160px;
+    height: auto;
+    min-height: 110px;
+  }
+  .hunt-bot {
+    position: absolute;
+    inset: 0.5rem;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+  }
+  .hunt-text {
+    align-self: center;
+  }
+}
+.hunt-text {
+  flex: 1;
+  min-width: 0;
+}
+.hunt-title {
+  font-family: 'Pokemon Solid', sans-serif;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+}
+.hunt-riddle {
+  font-family: 'Pokemon Classic';
+  margin: 0;
+  line-height: 1.8;
+  white-space: pre-line;
+  font-size: 0.75rem;
+}
+@media (max-width: 480px) {
+  .hunt-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  /* blue screen spans the card with the bot centered, like the workshop popup */
+  .hunt-bot-box {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0.75rem;
+  }
+}
+
 /* --- Footer --- */
 .site-footer {
   position: relative;
@@ -761,15 +853,29 @@ h2.section-title {
 .pokedex-light-yellow { background: #fecb65; }
 .pokedex-light-green { background: #32cb65; }
 
-/* Tabs hang from the line under the lights like folder tabs */
+/* Tabs hang from the line under the lights like folder tabs. The container
+   is only as wide as the row of hanging tabs, so a detached tab centers under them. */
 .pokedex-tabs {
   grid-column: 3;
   grid-row: 2 / 4;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0 0.75rem 0 1rem;
+}
+.pokedex-tabs-row {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: 0 0.75rem 0 1rem;
+}
+.pokedex-tabs-detached {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.6rem;
 }
 .section-tab {
   font-family: 'Poppins', sans-serif;
@@ -799,6 +905,16 @@ h2.section-title {
   color: #1a1a1a;
   padding-bottom: 0.8rem; /* active tab hangs a little lower */
 }
+/* The Scavenger Hunt tab isn't hung from the line, so it sits centered on its
+   own row under the other tabs with all four corners rounded. */
+.section-tab-detached {
+  border-top: 3px solid var(--pokedex-line);
+  border-radius: 12px;
+  padding: 0.55rem 1.1rem;
+}
+.section-tab-detached.is-active {
+  padding-bottom: 0.55rem;
+}
 .section-tab-panel {
   animation: fadeIn 0.3s ease;
 }
@@ -813,9 +929,13 @@ h2.section-title {
   .pokedex-tabs {
     grid-column: 1 / -1;
     grid-row: 3;
+    justify-self: stretch;
+    width: auto;
+    padding: 0.75rem 0 0;
+  }
+  .pokedex-tabs-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 0.75rem 0 0;
   }
   .section-tab {
     border-top: 3px solid var(--pokedex-line);
@@ -824,6 +944,10 @@ h2.section-title {
   }
   .section-tab.is-active {
     padding-bottom: 0.55rem;
+  }
+  /* centered under the 2x2 grid, one column wide */
+  .section-tab-detached {
+    width: calc(50% - 0.25rem);
   }
 }
 
@@ -1012,6 +1136,7 @@ h2.section-title {
    Section headings (KEYNOTE SPEAKERS, etc.) use the same treatment. */
 .section-tab-panel h2.section-title,
 .section-tab-panel .agenda-title,
+.section-tab-panel .hunt-title,
 .section-tab-panel .speaker-name {
   color: #ffcb05;
   text-shadow: 2px 0 0 #2a3a9e, -2px 0 0 #2a3a9e, 0 2px 0 #2a3a9e, 0 -2px 0 #2a3a9e,

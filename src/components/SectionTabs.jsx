@@ -37,24 +37,35 @@ const SectionTabs = ({ tabs, activeId, onChange }) => {
           <span className="pokedex-light pokedex-light-green" />
         </div>
         <div className="pokedex-tabs" role="tablist">
-          {tabs.map((tab, index) => {
-            const isActive = tab.id === activeId;
+          {/* Regular tabs hang from the line in one row; a detached tab sits
+              centered under that row */}
+          {[false, true].map((detached) => {
+            const group = tabs.filter((tab) => !!tab.detached === detached);
+            if (!group.length) return null;
             return (
-              <button
-                key={tab.id}
-                ref={(el) => { tabRefs.current[tab.id] = el; }}
-                id={`tab-${tab.id}`}
-                role="tab"
-                type="button"
-                aria-selected={isActive}
-                aria-controls={`panel-${tab.id}`}
-                tabIndex={isActive ? 0 : -1}
-                className={`section-tab${isActive ? ' is-active' : ''}`}
-                onClick={() => onChange(tab.id)}
-                onKeyDown={(e) => handleKeyDown(e, index)}
-              >
-                {tab.label}
-              </button>
+              <div key={String(detached)} className={detached ? 'pokedex-tabs-detached' : 'pokedex-tabs-row'}>
+                {group.map((tab) => {
+                  const index = tabs.indexOf(tab);
+                  const isActive = tab.id === activeId;
+                  return (
+                    <button
+                      key={tab.id}
+                      ref={(el) => { tabRefs.current[tab.id] = el; }}
+                      id={`tab-${tab.id}`}
+                      role="tab"
+                      type="button"
+                      aria-selected={isActive}
+                      aria-controls={`panel-${tab.id}`}
+                      tabIndex={isActive ? 0 : -1}
+                      className={`section-tab${isActive ? ' is-active' : ''}${detached ? ' section-tab-detached' : ''}`}
+                      onClick={() => onChange(tab.id)}
+                      onKeyDown={(e) => handleKeyDown(e, index)}
+                    >
+                      {tab.label}
+                    </button>
+                  );
+                })}
+              </div>
             );
           })}
         </div>
