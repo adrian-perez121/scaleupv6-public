@@ -1,4 +1,4 @@
-import mapImage from "../../assets/images/other/ScaleUp_map.jpg";
+import mapImage from "../../assets/images/other/ScaleUPv6_Map_.svg";
 
 // Opens the campus map image in a new tab (the browser's image viewer handles pinch-to-zoom).
 const openMapWindow = () => {
