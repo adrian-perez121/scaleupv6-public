@@ -151,7 +151,7 @@ h2.section-title {
   color: var(--card-title-color, var(--text-color));
 }
 .agenda-speaker {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Pokemon Classic', sans-serif;
   margin: 0.25rem 0 0;
   color: var(--text-color);
   font-size: 0.9rem;
@@ -159,7 +159,7 @@ h2.section-title {
   white-space: pre-line;
 }
 .agenda-description {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Pokemon Classic', sans-serif;
   margin: 0.5rem 0 0;
   color: var(--text-color);
   font-size: 0.9rem;
