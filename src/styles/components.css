@@ -9,7 +9,8 @@
   position: relative;
   text-align: center;
   padding: 1.5rem 2rem;
-  background: url('../../assets/images/other/PokemonBanner.jpg') no-repeat center center;
+  background: url("../../assets/images/other/PokemonBanner.jpg") no-repeat
+    center center;
   background-size: cover;
   transition: background 0.3s ease;
   border-bottom: 1px solid var(--border-color);
@@ -38,7 +39,7 @@
   margin: 0 auto;
 }
 .header-logo {
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   font-size: clamp(2rem, 8vw, 4rem);
   margin: 0;
   color: var(--logo-color);
@@ -56,7 +57,7 @@
   font-size: clamp(1.1rem, 4vw, 1.6rem);
   margin: 0.5rem 0;
   font-weight: 700;
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   background: var(--theme-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -123,7 +124,10 @@ h2.section-title {
   border-radius: 8px;
   margin-bottom: 1rem;
   background: var(--card-bg);
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    opacity 0.6s;
   cursor: default;
 }
 .agenda-time-wrapper {
@@ -135,11 +139,11 @@ h2.section-title {
 .agenda-time {
   color: var(--primary-color);
   font-weight: 700;
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   margin-bottom: 0.25rem;
 }
 .agenda-location {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   color: var(--secondary-color);
   font-weight: 500;
@@ -151,7 +155,7 @@ h2.section-title {
   color: var(--card-title-color, var(--text-color));
 }
 .agenda-speaker {
-  font-family: 'Pokemon Classic', sans-serif;
+  font-family: "Pokemon Classic", sans-serif;
   margin: 0.25rem 0 0;
   color: var(--text-color);
   font-size: 0.9rem;
@@ -159,7 +163,7 @@ h2.section-title {
   white-space: pre-line;
 }
 .agenda-description {
-  font-family: 'Pokemon Classic', sans-serif;
+  font-family: "Pokemon Classic", sans-serif;
   margin: 0.5rem 0 0;
   color: var(--text-color);
   font-size: 0.9rem;
@@ -187,23 +191,37 @@ h2.section-title {
   padding: 1.25rem 1rem;
   text-align: left;
   color: var(--primary-color);
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   border-bottom: 2px solid var(--border-color);
   font-size: 1.1rem;
 }
-.workshop-th-type { width: 10%; }
-.workshop-th-title { width: 50%; }
-.workshop-th-location { width: 15%; }
-.workshop-th-presenter { width: 25%; }
+.workshop-th-type {
+  width: 10%;
+}
+.workshop-th-title {
+  width: 50%;
+}
+.workshop-th-location {
+  width: 15%;
+}
+.workshop-th-presenter {
+  width: 25%;
+}
 .workshop-tr {
-  transition: background-color 0.3s, opacity 0.6s, transform 0.6s;
+  transition:
+    background-color 0.3s,
+    opacity 0.6s,
+    transform 0.6s;
   background: var(--card-bg);
 }
 .workshop-tr-clickable {
   cursor: pointer;
 }
 /* Elcobot column: light-blue screen box (like the speaker popup) inside the table */
-.workshop-th-bot { width: 88px; padding-right: 0; }
+.workshop-th-bot {
+  width: 88px;
+  padding-right: 0;
+}
 .workshop-th-ball {
   display: block;
   width: 40px;
@@ -243,7 +261,7 @@ h2.section-title {
 }
 .workshop-td-type {
   color: var(--primary-color);
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
 }
 .workshop-td-centered {
   text-align: center;
@@ -252,7 +270,7 @@ h2.section-title {
   padding: 1rem 0;
 }
 .booth-fair-title {
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   margin: 0 0 0.5rem 0;
   color: var(--primary-color);
   font-size: 1.2rem;
@@ -276,7 +294,10 @@ h2.section-title {
   border-radius: 8px;
   text-align: center;
   padding: 3rem 2rem;
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, opacity 0.6s ease-out;
+  transition:
+    transform 0.4s ease-out,
+    box-shadow 0.4s ease-out,
+    opacity 0.6s ease-out;
   cursor: pointer;
   width: 400px;
 }
@@ -293,7 +314,10 @@ h2.section-title {
   border-radius: 8px;
   text-align: center;
   padding: 2rem 1.5rem;
-  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, opacity 0.6s ease-out;
+  transition:
+    transform 0.4s ease-out,
+    box-shadow 0.4s ease-out,
+    opacity 0.6s ease-out;
   cursor: pointer;
   width: 280px;
 }
@@ -310,10 +334,16 @@ h2.section-title {
   border: 6px solid transparent;
   background:
     linear-gradient(var(--border-color), var(--border-color)) padding-box,
-    linear-gradient(to bottom,
-      #FF0000 0%, #FF0000 45%,
-      #000000 45%, #000000 55%,
-      #ffffff 55%, #ffffff 100%) border-box;
+    linear-gradient(
+        to bottom,
+        #ff0000 0%,
+        #ff0000 45%,
+        #000000 45%,
+        #000000 55%,
+        #ffffff 55%,
+        #ffffff 100%
+      )
+      border-box;
   box-shadow: 0 0 0 2px #000000;
 }
 .speaker-name {
@@ -323,7 +353,7 @@ h2.section-title {
   color: var(--card-title-color, var(--text-color));
 }
 .speaker-title {
-  font-family: 'Pokemon Classic';
+  font-family: "Pokemon Classic";
   margin: 0;
   color: var(--primary-color);
   font-size: 0.9rem;
@@ -397,12 +427,12 @@ h2.section-title {
   min-width: 0;
 }
 .hunt-title {
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   margin: 0 0 0.5rem 0;
   font-size: 1.4rem;
 }
 .hunt-riddle {
-  font-family: 'Pokemon Classic';
+  font-family: "Pokemon Classic";
   margin: 0;
   line-height: 1.8;
   white-space: pre-line;
@@ -495,12 +525,18 @@ h2.section-title {
 }
 /* Two small red lights centered at the top of the container */
 .modal-content::before {
-  content: '';
+  content: "";
   display: block;
   width: 36px;
   height: 14px;
   margin: -1.5rem auto 0.75rem;
-  background: radial-gradient(circle, #e00000 0 4.5px, #000 4.5px 6px, transparent 6.5px) 0 0 / 18px 14px repeat-x;
+  background: radial-gradient(
+      circle,
+      #e00000 0 4.5px,
+      #000 4.5px 6px,
+      transparent 6.5px
+    )
+    0 0 / 18px 14px repeat-x;
 }
 .modal-scroll {
   padding: 0.5rem 0.5rem 0.25rem; /* room so the title outline isn't clipped */
@@ -582,8 +618,15 @@ h2.section-title {
   height: 30px;
   margin: 1.25rem 0;
   background:
-    radial-gradient(circle at 15px 15px, #e00000 0 11px, #000 11px 13.5px, transparent 14px) left center / 30px 30px no-repeat,
-    repeating-linear-gradient(to bottom, #000 0 3px, transparent 3px 6px) right center / 44px 27px no-repeat;
+    radial-gradient(
+        circle at 15px 15px,
+        #e00000 0 11px,
+        #000 11px 13.5px,
+        transparent 14px
+      )
+      left center / 30px 30px no-repeat,
+    repeating-linear-gradient(to bottom, #000 0 3px, transparent 3px 6px) right
+      center / 44px 27px no-repeat;
 }
 .modal-close-button {
   position: absolute;
@@ -610,8 +653,15 @@ h2.section-title {
   margin: 0 0 0.75rem 0;
   line-height: 1.3;
   color: #ffcb05;
-  text-shadow: 2px 0 0 #2a3a9e, -2px 0 0 #2a3a9e, 0 2px 0 #2a3a9e, 0 -2px 0 #2a3a9e,
-    1.4px 1.4px 0 #2a3a9e, -1.4px 1.4px 0 #2a3a9e, 1.4px -1.4px 0 #2a3a9e, -1.4px -1.4px 0 #2a3a9e;
+  text-shadow:
+    2px 0 0 #2a3a9e,
+    -2px 0 0 #2a3a9e,
+    0 2px 0 #2a3a9e,
+    0 -2px 0 #2a3a9e,
+    1.4px 1.4px 0 #2a3a9e,
+    -1.4px 1.4px 0 #2a3a9e,
+    1.4px -1.4px 0 #2a3a9e,
+    -1.4px -1.4px 0 #2a3a9e;
 }
 .modal-speaker-title {
   text-align: left;
@@ -645,7 +695,10 @@ h2.section-title {
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: background 0.2s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    background 0.2s ease,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 .back-to-top-button:hover,
 .survey-button:hover {
@@ -724,9 +777,11 @@ h2.section-title {
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  font-family: 'Pokemon Solid', sans-serif;
+  font-family: "Pokemon Solid", sans-serif;
   font-size: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .exit-survey-link:hover {
@@ -754,7 +809,9 @@ h2.section-title {
   background: var(--pokedex-red);
   border-top: 3px solid var(--pokedex-line);
   border-bottom: 3px solid var(--pokedex-line);
-  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 0 -4px 0 rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.25);
   /* Side padding keeps the content clear of the fixed corner buttons */
   padding: 0.4rem 6rem 0;
   overflow: hidden; /* clips the black lines that run out to the screen edges */
@@ -788,7 +845,7 @@ h2.section-title {
   box-shadow: 0 0 0 3px var(--pokedex-line);
 }
 .pokedex-lens::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 7px;
   left: 8px;
@@ -823,15 +880,19 @@ h2.section-title {
 /* Extend the low line left and the high line right to the screen edges */
 .pokedex-lens-zone::before,
 .pokedex-lights::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   width: 100vw;
   height: 3px;
   background: var(--pokedex-line);
 }
-.pokedex-lens-zone::before { right: 100%; }
-.pokedex-lights::after { left: 100%; }
+.pokedex-lens-zone::before {
+  right: 100%;
+}
+.pokedex-lights::after {
+  left: 100%;
+}
 .pokedex-light {
   position: relative;
   width: 16px;
@@ -840,7 +901,7 @@ h2.section-title {
   border: 2px solid var(--pokedex-line);
 }
 .pokedex-light::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 2px;
@@ -849,9 +910,15 @@ h2.section-title {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.75);
 }
-.pokedex-light-red { background: #ff0000; }
-.pokedex-light-yellow { background: #fecb65; }
-.pokedex-light-green { background: #32cb65; }
+.pokedex-light-red {
+  background: #ff0000;
+}
+.pokedex-light-yellow {
+  background: #fecb65;
+}
+.pokedex-light-green {
+  background: #32cb65;
+}
 
 /* Tabs hang from the line under the lights like folder tabs. The container
    is only as wide as the row of hanging tabs, so a detached tab centers under them. */
@@ -878,7 +945,7 @@ h2.section-title {
   margin-top: 0.6rem;
 }
 .section-tab {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -891,7 +958,10 @@ h2.section-title {
   cursor: pointer;
   white-space: nowrap;
   box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.901);
-  transition: background 0.2s ease, color 0.2s ease, padding 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding 0.2s ease;
 }
 .section-tab:hover {
   background: #e0004c;
@@ -1023,26 +1093,43 @@ h2.section-title {
 }
 /* Two small red lights centered at the top of the bezel */
 .section-tab-panel > .section > .container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
   width: 36px;
   height: 14px;
-  background: radial-gradient(circle, #e00000 0 4.5px, var(--pokedex-line) 4.5px 6px, transparent 6.5px) 0 0 / 18px 14px repeat-x;
+  background: radial-gradient(
+      circle,
+      #e00000 0 4.5px,
+      var(--pokedex-line) 4.5px 6px,
+      transparent 6.5px
+    )
+    0 0 / 18px 14px repeat-x;
 }
 /* Big red button bottom-left, speaker grill bottom-right */
 .section-tab-panel > .section > .container::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 2rem;
   right: 2rem;
   bottom: 1rem;
   height: 30px;
   background:
-    radial-gradient(circle at 15px 15px, #e00000 0 11px, var(--pokedex-line) 11px 13.5px, transparent 14px) left center / 30px 30px no-repeat,
-    repeating-linear-gradient(to bottom, var(--pokedex-line) 0 3px, transparent 3px 6px) right center / 44px 27px no-repeat;
+    radial-gradient(
+        circle at 15px 15px,
+        #e00000 0 11px,
+        var(--pokedex-line) 11px 13.5px,
+        transparent 14px
+      )
+      left center / 30px 30px no-repeat,
+    repeating-linear-gradient(
+        to bottom,
+        var(--pokedex-line) 0 3px,
+        transparent 3px 6px
+      )
+      right center / 44px 27px no-repeat;
   pointer-events: none;
 }
 
@@ -1092,10 +1179,18 @@ h2.section-title {
 .section-tab-panel .workshop-td {
   background: inherit;
 }
-.section-tab-panel .workshop-th:first-child { border-top-left-radius: 9px; }
-.section-tab-panel .workshop-th:last-child { border-top-right-radius: 9px; }
-.section-tab-panel .workshop-tbody-last-row > td:first-child { border-bottom-left-radius: 9px; }
-.section-tab-panel .workshop-tbody-last-row > td:last-child { border-bottom-right-radius: 9px; }
+.section-tab-panel .workshop-th:first-child {
+  border-top-left-radius: 9px;
+}
+.section-tab-panel .workshop-th:last-child {
+  border-top-right-radius: 9px;
+}
+.section-tab-panel .workshop-tbody-last-row > td:first-child {
+  border-bottom-left-radius: 9px;
+}
+.section-tab-panel .workshop-tbody-last-row > td:last-child {
+  border-bottom-right-radius: 9px;
+}
 .section-tab-panel .workshop-thead,
 .section-tab-panel .workshop-tr {
   background: var(--pokedex-screen);
@@ -1139,8 +1234,15 @@ h2.section-title {
 .section-tab-panel .hunt-title,
 .section-tab-panel .speaker-name {
   color: #ffcb05;
-  text-shadow: 2px 0 0 #2a3a9e, -2px 0 0 #2a3a9e, 0 2px 0 #2a3a9e, 0 -2px 0 #2a3a9e,
-    1.4px 1.4px 0 #2a3a9e, -1.4px 1.4px 0 #2a3a9e, 1.4px -1.4px 0 #2a3a9e, -1.4px -1.4px 0 #2a3a9e;
+  text-shadow:
+    2px 0 0 #2a3a9e,
+    -2px 0 0 #2a3a9e,
+    0 2px 0 #2a3a9e,
+    0 -2px 0 #2a3a9e,
+    1.4px 1.4px 0 #2a3a9e,
+    -1.4px 1.4px 0 #2a3a9e,
+    1.4px -1.4px 0 #2a3a9e,
+    -1.4px -1.4px 0 #2a3a9e;
 }
 
 /* Phones: workshops table becomes stacked cards so nothing is cut off */
@@ -1187,7 +1289,9 @@ h2.section-title {
   .section-tab-panel .workshop-td-bot:not(:empty) + .workshop-td {
     padding-left: 1.5rem;
   }
-  .workshop-th-bot { display: none; }
+  .workshop-th-bot {
+    display: none;
+  }
   .section-tab-panel .workshop-table,
   .section-tab-panel .workshop-table tbody {
     display: block;
@@ -1221,7 +1325,7 @@ h2.section-title {
   }
   .section-tab-panel .workshop-td[data-label]::before {
     content: attr(data-label);
-    font-family: 'Pokemon Solid', sans-serif;
+    font-family: "Pokemon Solid", sans-serif;
     color: #2a3a9e;
   }
   /* Booth fair row spans the full card */

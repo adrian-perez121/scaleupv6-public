@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { workshopItems } from '../data/workshops';
-import elcomonBall from '../../assets/images/elcobots/elcomonball.svg';
+import React, { useEffect, useRef } from "react";
+import { workshopItems } from "../data/workshops";
+import elcomonBall from "../../assets/images/elcobots/elcomonball.svg";
 
 const Workshops = ({ onOpenMap, onItemClick }) => {
   const sectionRef = useRef(null);
@@ -12,15 +12,17 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const itemsToAnimate = currentSection.querySelectorAll('.workshop-item-animate');
+    const itemsToAnimate = currentSection.querySelectorAll(
+      ".workshop-item-animate",
+    );
     itemsToAnimate.forEach((item) => {
       observer.observe(item);
     });
@@ -33,14 +35,18 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="workshops" className="section content-section">
+    <section
+      ref={sectionRef}
+      id="workshops"
+      className="section content-section"
+    >
       <div className="container">
         <h2 className="section-title section-title-tight">Workshops</h2>
         <p
-        className="section-subtitle-link agenda-location-link"
-        onClick={onOpenMap}
+          className="section-subtitle-link agenda-location-link"
+          onClick={onOpenMap}
         >
-            All held in MBA Building
+          All held in MBA Building
         </p>
         <div className="section-title-separator"></div>
         <div className="table-scroll">
@@ -59,22 +65,28 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
               {workshopItems.map((item, index) => {
                 // Only workshops with a description open a popup
                 const hasDetails = !!item.description;
-                const openDetails = () => onItemClick({
-                  title: item.title,
-                  bot: item.bot,
-                  subtitle: item.instructor,
-                  description: item.description,
-                });
+                const openDetails = () =>
+                  onItemClick({
+                    title: item.title,
+                    bot: item.bot,
+                    subtitle: item.instructor,
+                    description: item.description,
+                  });
                 return (
                   <tr
                     key={index}
-                    className={`workshop-tr workshop-item-animate${hasDetails ? ' workshop-tr-clickable' : ''}`}
+                    className={`workshop-tr workshop-item-animate${hasDetails ? " workshop-tr-clickable" : ""}`}
                     {...(hasDetails && {
                       onClick: openDetails,
-                      onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDetails(); } },
+                      onKeyDown: (e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          openDetails();
+                        }
+                      },
                       tabIndex: 0,
-                      role: 'button',
-                      'aria-label': `${item.title} – view details`,
+                      role: "button",
+                      "aria-label": `${item.title} – view details`,
                     })}
                   >
                     <td className="workshop-td workshop-td-bot">
@@ -88,22 +100,34 @@ const Workshops = ({ onOpenMap, onItemClick }) => {
                       {/* one wrapper so the mobile grid treats title + icon as a single cell */}
                       <span>
                         {item.title}
-                        {hasDetails && <span className="workshop-info" aria-hidden="true"> ⓘ</span>}
+                        {hasDetails && (
+                          <span className="workshop-info" aria-hidden="true">
+                            {" "}
+                            ⓘ
+                          </span>
+                        )}
                       </span>
                     </td>
-                    <td className="workshop-td" data-label="Location">{item.location}</td>
-                    <td className="workshop-td" data-label="Presenter">{item.instructor}</td>
+                    <td className="workshop-td" data-label="Location">
+                      {item.location}
+                    </td>
+                    <td className="workshop-td" data-label="Presenter">
+                      {item.instructor}
+                    </td>
                   </tr>
                 );
               })}
               <tr className="workshop-tr workshop-tbody-last-row">
                 <td colSpan={4} className="workshop-td workshop-td-centered">
-                    <div className="booth-fair">
-                        <h4 className="booth-fair-title">Booth Fair</h4>
-                        <p className="booth-fair-text">
-                            Check out the demos and info from companies and student clubs on campus! Learn about the Robotics club, the Computing club, the Women in Technology club, the Google Student Developers club, and more!
-                        </p>
-                    </div>
+                  <div className="booth-fair">
+                    <h4 className="booth-fair-title">Booth Fair</h4>
+                    <p className="booth-fair-text">
+                      Check out the demos and info from companies and student
+                      clubs on campus! Learn about the Robotics club, the
+                      Computing club, the Women in Technology club, the Google
+                      Student Developers club, and more!
+                    </p>
+                  </div>
                 </td>
               </tr>
             </tbody>

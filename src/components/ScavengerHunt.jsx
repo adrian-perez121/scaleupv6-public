@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { scavengerHuntClues } from '../data/scavengerHunt';
+import React, { useEffect, useRef } from "react";
+import { scavengerHuntClues } from "../data/scavengerHunt";
 
 const ScavengerHunt = () => {
   const sectionRef = useRef(null);
@@ -11,15 +11,17 @@ const ScavengerHunt = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
-    const cardsToAnimate = currentSection.querySelectorAll('.speaker-card-animate');
+    const cardsToAnimate = currentSection.querySelectorAll(
+      ".speaker-card-animate",
+    );
     cardsToAnimate.forEach((card) => observer.observe(card));
 
     return () => {
@@ -28,10 +30,16 @@ const ScavengerHunt = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="scavenger-hunt" className="section content-section">
+    <section
+      ref={sectionRef}
+      id="scavenger-hunt"
+      className="section content-section"
+    >
       <div className="container">
         <h2 className="section-title section-title-tight">Scavenger Hunt</h2>
-        <p className="section-subtitle-link">Solve the riddles to find the hidden ElCoMon!</p>
+        <p className="section-subtitle-link">
+          Solve the riddles to find the hidden ElCoMon!
+        </p>
         <div className="section-title-separator"></div>
         <div className="hunt-grid">
           {scavengerHuntClues.map((clue, index) => (

@@ -6,11 +6,11 @@
   --card-bg: #1a1a2e;
   --border-color: #3a3a5e;
 }
-body[data-theme='light'] {
+body[data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
-  --primary-color: #0077FF;
-  --secondary-color: #FF477E;
+  --primary-color: #0077ff;
+  --secondary-color: #ff477e;
   --card-bg: #dee2e6;
   --border-color: #e9ecef;
 }
@@ -19,13 +19,15 @@ body {
   padding: 2rem;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 img {
   max-width: 100%;
@@ -40,7 +42,9 @@ p {
   max-width: 900px;
   line-height: 1.4;
   margin-bottom: 2rem;
-  text-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+  text-shadow:
+    0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
   font-weight: 600;
 }
 .theme-toggle {
@@ -57,9 +61,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .theme-toggle:hover {
-   box-shadow: 0 0 25px var(--secondary-color);
+  box-shadow: 0 0 25px var(--secondary-color);
 }

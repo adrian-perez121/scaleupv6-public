@@ -1,8 +1,8 @@
-import codingBot from '../../assets/images/elcobots/codingbot.svg';
-import cyberSecurityBot from '../../assets/images/elcobots/cybersecuritybot.svg';
-import cloudBot from '../../assets/images/elcobots/cloudbot.svg';
-import aiBot from '../../assets/images/elcobots/aibot.svg';
-import networkBot from '../../assets/images/elcobots/networkbot.svg';
+import codingBot from "../../assets/images/elcobots/codingbot.svg";
+import cyberSecurityBot from "../../assets/images/elcobots/cybersecuritybot.svg";
+import cloudBot from "../../assets/images/elcobots/cloudbot.svg";
+import aiBot from "../../assets/images/elcobots/aibot.svg";
+import networkBot from "../../assets/images/elcobots/networkbot.svg";
 
 // One riddle per elcobot. Line breaks in `riddle` are kept when displayed.
 export const scavengerHuntClues = [
