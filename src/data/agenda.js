@@ -18,7 +18,7 @@ export const agendaItems = [
     speaker: "Katherine Quintanilla, Software Engineer at JPMorgan Chase",
   },
   {
-    time: "10:05 AM - 10:25 AM",
+    time: "10:05 AM - 10:30 AM",
     location: "Gymnasium",
     title: "Keynote 2",
     speaker: "Cristian Gonzales, Senior Software Engineer at Microsoft",
