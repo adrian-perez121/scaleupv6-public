@@ -1,10 +1,10 @@
-import adelgadoImage from "../../assets/images/presenters/adelgado.png";
-import christianImage from "../../assets/images/presenters/christian.jpg";
+//import adelgadoImage from "../../assets/images/presenters/adelgado. png";
+//import christianImage from "../../assets/images/presenters/christian.jpg";
 import leImage from "../../assets/images/presenters/le.jpg";
-import matosImage from "../../assets/images/presenters/matos.jpg";
+//import matosImage from "../../assets/images/presenters/matos.jpg";
 import nicoImage from "../../assets/images/presenters/npetroantonio.jpg";
 import niuImage from "../../assets/images/presenters/niu.jpg";
-import palmerImage from "../../assets/images/presenters/palmer.png";
+//import palmerImage from "../../assets/images/presenters/palmer.png";
 import rajeshImage from "../../assets/images/presenters/rajesh.jpg";
 import rperkinsImage from "../../assets/images/presenters/rperkins.png";
 import yeressianImage from "../../assets/images/presenters/yeressian.jpg";
@@ -17,8 +17,24 @@ import muhammadU from "../../assets/images/presenters/musmon.jpeg";
 import lailaK from "../../assets/images/presenters/lkegler.jpg";
 import solomonR from "../../assets/images/presenters/srussell.png";
 import ElCoBotImage from "../../assets/images/presenters/ScaleUPv6_CaminobotProfilePic.png";
+import jrubioImage from "../../assets/images/presenters/rubio.jpg";
 
 export const allSpeakers = [
+  {
+    name: "Jesus Rubio",
+    title: "Computer Information Systems Professor at El Camino College",
+    img: jrubioImage,
+    description:
+      `I got into the IT field in 1994 as a PC repair technician. I got my first IT Certification in 1995 as a Certified Novell Engineer (CNE) working on Novell's NetWare 3.12. TCP/IP was still not the standard networking protocol on Windows or Mac Computers. In 2000 I got my Microsoft's Certified Systems Engineer (MCSE) and decided to pursue database design using a new product called MS SQL Server 6.0. Over the past 20 years I have worked with a multitude of different IT vendors, programming languages, and networking hardware.
+
+In terms of skills, I'm a certified MSCSD programming professional with extensive programming experience in building web frontends. I also have a bachelor’s degree in network administration and a master’s degree In Cybersecurity from the University of San Diego. 
+
+I have been a Certified Cisco Network Associate (CCNA) for almost a decade. I renewed my CCNA Certification status in 2024 and I’m currently studying to take the new CCNA Certification exam later this year 2026.
+(Re-Certification is never ending!)  
+
+I offer my students is a real-world working knowledge of the IT Field and I try to share my passion for learning.
+`
+  },
   {
     name: "Solomon Russell",
     title: "Professor and Chair of CS Department at El Camino College",
