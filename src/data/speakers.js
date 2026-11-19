@@ -21,19 +21,68 @@ import jrubioImage from "../../assets/images/presenters/rubio.jpg";
 
 export const allSpeakers = [
   {
+    name: "Martin Anaya",
+    title: "CIS Professor at El Camino College",
+    img: martinAImage,
+    description:
+      "Lifelong tech & gaming enthusiast. Previously a sysadmin, now a faculty member for the CIS department at El Camino College.",
+  },
+  {
+    name: "Rajesh Boppana",
+    title: "Principal Solutions Architect at Microchip",
+    img: rajeshImage,
+    description: `I am passionate about leveraging cutting-edge technologies to drive innovation and empower others through knowledge sharing. With over 20 years of experience in the IT industry, I specialize in Generative AI, Machine Learning, and Solution Architecture, focusing on designing and implementing enterprise-scale AI solutions.
+
+Currently, I serve as a Solutions Architect at Microchip, where I lead initiatives to integrate AI into semiconductor design, particularly at the chip level. My previous roles include driving innovation at JPMorgan and State Farm, with a strong emphasis on GenAI and Agentic AI solutions. I hold an Executive Education credential from MIT, and I’m an honored graduate in Master of Computer Science.`,
+  },
+  {
+    name: "Laila Kegler",
+    title: "Career Advisor at El Camino College",
+    img: lailaK,
+    description: `Hi everyone! My name is Laila Kegler, and I am a Career Advisor for Career Services at El Camino College (ECC). I support community college students through elevated, tailored career preparation ranging from building a stellar resume to developing confident interviewing skills for future opportunities. I enjoy supporting college students in their educational and career journeys, and one of my favorite ways to assist people is through hosting dialogic, meaningful workshops to teach people something applicable in their lives.
+
+Outside of work, I am a graduate student at the California State University, Long Beach (CSULB) pursuing a Master of Science (M.S.) in Counseling, Student Development in Higher Education. With the emphasis on incorporating student development theories into my counseling philosophy and practice, I will become a student affairs practitioner advocating for fulfilling student needs from a professional perspective.
+
+Of course, outside of work and school, I enjoy spending time with my family, friends, and going on solo trips! It's important to be well-rounded as people, and that is something I will always reiterate to every student I come across is the importance of actively working towards your goals while also craving out time for rest and play!`,
+  },
+  {
+    name: "Hac Le",
+    img: leImage,
+    title: "Computer Information Systems Professor at El Camino College",
+    description: `Hac Le is a CIS instructor at El Camino College with a blended background in art, design, and technology. He brings over a decade of IT leadership experience, including serving as Senior IT Manager for the Natural History Museums of Los Angeles County, and more than 20 years as a creative designer. He holds an MS in Information Technology, a BA in Studio Arts, a UCLA Web & Interaction Design certificate, and multiple industry certifications, and is committed to inspiring the next generation of IT professionals.`,
+  },
+  {
+    name: "Emma Niu",
+    title: "Mathematics Professor at El Camino College",
+    img: niuImage,
+    description: `Kun “Emma” Niu has a Masters of Science in Mathematics. Her passion for numbers has led her to teaching Statistics, learning Python and studying Data Science. She loves teaching and travels to Japan and enjoys Japanese culture on her time off.`,
+  },
+  {
+    name: "Richard Perkins",
+    title: "Computer Information Systems Professor at El Camino College",
+    img: rperkinsImage,
+    description: `Richard Perkins is an experienced Computer Information Systems (CIS) instructor at El Camino College with a wealth of knowledge and a passion for teaching. He started as a student-athlete at El Camino College in 2004, playing football and competing in track and field. 9 years later, he started teaching at CIS at El Camino College in 2013.
+
+As he marks his tenth year at the community college, Richard Perkins continues to inspire, educate, and nurture the next generation of tech-savvy individuals. His passion for teaching, expertise in Cybersecurity, and unwavering dedication to his students make him a valued asset to the institution and a role model for all.`,
+  },
+  {
+    name: "Nico Pietrantonio",
+    title: "Human Resources Technician at City of Torrance",
+    img: nicoImage,
+    description: `Nico Pietrantonio is a Senior Human Resources Technician with the City of Torrance and holds a Master of Public Administration from Southern Utah University. With experience in both higher education and public sector human resources, his expertise includes recruitment, training and development, workforce development, and labor agreement interpretation. Nico is the creator of the City's Career Technical Education (CTE) Partnership Program and is a strong advocate for workforce pipeline development, helping connect students and job seekers to meaningful careers in public service.`,
+  },
+  {
     name: "Jesus Rubio",
     title: "Computer Information Systems Professor at El Camino College",
     img: jrubioImage,
-    description:
-      `I got into the IT field in 1994 as a PC repair technician. I got my first IT Certification in 1995 as a Certified Novell Engineer (CNE) working on Novell's NetWare 3.12. TCP/IP was still not the standard networking protocol on Windows or Mac Computers. In 2000 I got my Microsoft's Certified Systems Engineer (MCSE) and decided to pursue database design using a new product called MS SQL Server 6.0. Over the past 20 years I have worked with a multitude of different IT vendors, programming languages, and networking hardware.
+    description: `I got into the IT field in 1994 as a PC repair technician. I got my first IT Certification in 1995 as a Certified Novell Engineer (CNE) working on Novell's NetWare 3.12. TCP/IP was still not the standard networking protocol on Windows or Mac Computers. In 2000 I got my Microsoft's Certified Systems Engineer (MCSE) and decided to pursue database design using a new product called MS SQL Server 6.0. Over the past 20 years I have worked with a multitude of different IT vendors, programming languages, and networking hardware.
 
-In terms of skills, I'm a certified MSCSD programming professional with extensive programming experience in building web frontends. I also have a bachelor’s degree in network administration and a master’s degree In Cybersecurity from the University of San Diego. 
+In terms of skills, I'm a certified MSCSD programming professional with extensive programming experience in building web frontends. I also have a bachelor’s degree in network administration and a master’s degree In Cybersecurity from the University of San Diego.
 
 I have been a Certified Cisco Network Associate (CCNA) for almost a decade. I renewed my CCNA Certification status in 2024 and I’m currently studying to take the new CCNA Certification exam later this year 2026.
-(Re-Certification is never ending!)  
+(Re-Certification is never ending!)
 
-I offer my students is a real-world working knowledge of the IT Field and I try to share my passion for learning.
-`
+I offer my students is a real-world working knowledge of the IT Field and I try to share my passion for learning.`,
   },
   {
     name: "Solomon Russell",
@@ -43,84 +92,35 @@ I offer my students is a real-world working knowledge of the IT Field and I try 
       "In 2018, he was appointed by the Governor to the Computer Science Strategic Implementation Advisory Panel, which produced an implementation plan that was adopted by the California State Board of Education in 2019. From 2012 to 2016, he was the computer science curriculum developer and lead instructor for Level Playing Field Institute's Summer Math and Science Honors (SMASH) Academy. He has given keynotes at the 2018 Joint Special Populations Annual CTE Conference and the 2019 UCLA exploreTech.LA Conference. He received the Computer Science Teacher of the Year Award from the El Camino ACM Chapter in 2017.",
   },
   {
-    name: "Rajesh Boppana",
-    title: "Principal Solutions Architect at Microchip",
-    img: rajeshImage,
-    description: `I am passionate about leveraging cutting-edge technologies to drive innovation and empower others through knowledge sharing. With over 20 years of experience in the IT industry, I specialize in Generative AI, Machine Learning, and Solution Architecture, focusing on designing and implementing enterprise-scale AI solutions. 
-
-Currently, I serve as a Solutions Architect at Microchip, where I lead initiatives to integrate AI into semiconductor design, particularly at the chip level. My previous roles include driving innovation at JPMorgan and State Farm, with a strong emphasis on GenAI and Agentic AI solutions. I hold an Executive Education credential from MIT, and I’m an honored graduate in Master of Computer Science.`,
-  },
-
-  // { name: 'Adrian Delgado', title: 'Job Developer at El Camino College', img: adelgadoImage, description: 'Adrian Delgado is a Job Developer here at El Camino College. Receiving his BA from CSU Northridge and his MA from Antioch University, Adrian has a passion for helping students find their careers. Adrian has dedicated his efforts into reviewing student resumes, discovering career options, finding employment, and developing students to be ready for the workplace.' },
-  {
-    name: "Hac Le",
-    img: leImage,
-    title: "Computer Information Systems Professor at El Camino College",
-    description: `Hac Le is a CIS instructor at El Camino College with a blended background in art, design, and technology. He brings over a decade of IT leadership experience, including serving as Senior IT Manager for the Natural History Museums of Los Angeles County, and more than 20 years as a creative designer. He holds an MS in Information Technology, a BA in Studio Arts, a UCLA Web & Interaction Design certificate, and multiple industry certifications, and is committed to inspiring the next generation of IT professionals.`,
-  },
-
-  // { name: 'Victor Matos', title: 'Computer Science Professor at El Camino College', img: matosImage, description: `Dr. Victor Matos is a computer scientist specializing in database systems, programming languages, mobile application development, and excellence in computer science education. He earned a Ph.D. in Computer Science from Case Western Reserve University, an M.S. in Computer Science, and a B.Sc. in Computing Engineering from Universidad Simón Bolívar. He currently serves as Professor of Computer Sciences in the Division of Mathematical Sciences at El Camino College. Previously, he spent over three decades at Cleveland State University as Professor of Business Information Systems and Engineering, where he now holds Emeritus status. His career also includes service as a Fulbright Scholar at the Universidad de Costa Rica, CIO at Utopia Technologies LLC, independent consultant, senior systems analyst for the Venezuelan Army, and academic roles at multiple institutions. For a list of publications, search “Victor Matos” on Google Scholar.` },
-
-  {
-    name: "Emma Niu",
-    title: "Mathematics Professor at El Camino College",
-    img: niuImage,
-    description: `Kun “Emma” Niu has a Masters of Science in Mathematics. Her passion for numbers has led her to teaching Statistics, learning Python and studying Data Science. She loves teaching and travels to Japan and enjoys Japanese culture on her time off.`,
-  },
-
-  // { name: 'Christian Olivas', title: 'Student Ambassador', img: christianImage, description: 'An alumnus from San Jose State University, Christian has returned to his roots in Torrance with El Camino College to further pursue education. Working along with the Business Division, Christian has led many workshops for ScaleUP, including drone and AWS Deepracer presentation. He spends his free time rock climbing and traveling.' },
-  // { name: 'Patrick Palmer', title: 'Computer Information Systems Professor at El Camino College', img: palmerImage, description: `Patrick Palmer is an adjunct instructor in the CIS program at El Camino College, leveraging over 20 years of industry experience gained at the database company Teradata Inc. After his extensive industry career, he returned to ECC to earn his AS in Computer Information Systems and acquire key certifications, including AWS Cloud Practitioner and CompTIA A+. Patrick currently balances his teaching role with part-time IT work for a real estate company in Gardena, ensuring his knowledge stays current. In his personal time, he blends music and history, performing with his antique English Concertinas at Renaissance Fairs and singing with the El Camino College Chorale.` },
-
-  {
-    name: "Richard Perkins",
-    title: "Computer Information Systems Professor at El Camino College",
-    img: rperkinsImage,
-    description: `Richard Perkins is an experienced Computer Information Systems (CIS) instructor at El Camino College with a wealth of knowledge and a passion for teaching. He started as a student-athlete at El Camino College in 2004, playing football and competing in track and field. 9 years later, he started teaching at CIS at El Camino College in 2013.
-    
-    As he marks his tenth year at the community college, Richard Perkins continues to inspire, educate, and nurture the next generation of tech-savvy individuals. His passion for teaching, expertise in Cybersecurity, and unwavering dedication to his students make him a valued asset to the institution and a role model for all.`,
-  },
-
-  {
-    name: "Laila Kegler",
-    title: "Career Advisor at El Camino College",
-    img: lailaK,
-    description: `Hi everyone! My name is Laila Kegler, and I am a Career Advisor for Career Services at El Camino College (ECC). I support community college students through elevated, tailored career preparation ranging from building a stellar resume to developing confident interviewing skills for future opportunities. I enjoy supporting college students in their educational and career journeys, and one of my favorite ways to assist people is through hosting dialogic, meaningful workshops to teach people something applicable in their lives. 
-    
-    Outside of work, I am a graduate student at the California State University, Long Beach (CSULB) pursuing a Master of Science (M.S.) in Counseling, Student Development in Higher Education. With the emphasis on incorporating student development theories into my counseling philosophy and practice, I will become a student affairs practitioner advocating for fulfilling student needs from a professional perspective. 
-    
-    Of course, outside of work and school, I enjoy spending time with my family, friends, and going on solo trips! It's important to be well-rounded as people, and that is something I will always reiterate to every student I come across is the importance of actively working towards your goals while also craving out time for rest and play!`,
+    name: "Annette Villa",
+    title: "Student at El Camino College",
+    img: annetteVImage,
+    description:
+      "Annette Villa is a second-year student at El Camino College majoring in Manufacturing Engineering. For the past 2 semesters, she has worked as a Teaching Assistant for the CIS Department, determined to find problems to troubleshoot and ways to help students succeed. Previously, Annette was a part of the Google AI Micro-Internship cohort in Fall 2025 where she remotely worked with a team of California community college students and a Google mentor. Together, they utilized and fine-tuned an AI model to create an investment banking app prototype using Google AI Studio. Along with her background in Tech, she is also passionate in hands-on work and the process of creating tangible products, from designing to manufacturing. Her hobbies and skills include CADD modeling in Catia, SolidWorks, and AutoCAD, 3D Printing, designing and drafting, and casual illustration.",
   },
   {
-    name: "Nico Pietrantonio",
-    title: "Human Resources Technician at City of Torrance",
-    img: nicoImage,
-    description: `Nico Pietrantonio is a Senior Human Resources Technician with the City of Torrance and holds a Master of Public Administration from Southern Utah University. With experience in both higher education and public sector human resources, his expertise includes recruitment, training and development, workforce development, and labor agreement interpretation. Nico is the creator of the City's Career Technical Education (CTE) Partnership Program and is a strong advocate for workforce pipeline development, helping connect students and job seekers to meaningful careers in public service.`,
+    name: "Joe Weichman",
+    title: "Robotics Professor at El Camino College",
+    img: ElCoBotImage,
+    description:
+      "Joe Weichman is in his 3rd year as a robotics instructor at El Camino College and developed the current robotics program. He previously worked at the Business Training Center at El Camino College for over 10 years on Advanced Manufacturing issues and grant-related work. He has a M.S. in Space Education, and started his career at NASA's Jet Propulsion Laboratory in the Optical Communications Group, first as an intern and then under contract.",
   },
-
   {
     name: "Dr. John Yeressian",
     title: "Business Professor at El Camino College",
     img: yeressianImage,
     description: `John Yeressian has been immersed in the real estate industry for over 25 years and has held a California broker’s license since 2008. A tenured professor and published author, he has written extensively on real estate topics and contributed to the academic and professional development of the field.
 
-Throughout his career, John has witnessed the evolution of real estate from a traditionally low-tech industry to one increasingly driven by innovation. He has embraced advancements such as drones, 3D cameras, virtual tours, and most recently, artificial intelligence. His commitment to modernization is evident in his development of exam prep apps and his continuous efforts to integrate technology into real estate education and practice. 
+Throughout his career, John has witnessed the evolution of real estate from a traditionally low-tech industry to one increasingly driven by innovation. He has embraced advancements such as drones, 3D cameras, virtual tours, and most recently, artificial intelligence. His commitment to modernization is evident in his development of exam prep apps and his continuous efforts to integrate technology into real estate education and practice.
 
 John holds degrees in finance, business administration (MBA), and law. Despite his diverse academic background, his true passion remains rooted in the real estate industry.`,
   },
-
   {
-    name: "Joe Weichman",
-    title: "Robotics Professor at El Camino College",
-    img: ElCoBotImage,
+    name: "Muhammad Usmon",
+    title: "Cloud Computing Student at El Camino College",
+    img: muhammadU,
     description:
-      "Joe Weichman is in his 3rd year as a robotics instructor at El Camino College and developed the current robotics program. He previously worked at the Business Training Center at El Camino College for over 10 years on Advanced Manufacturing issues and grant-related work. He has a M.S. in Space Education, and started his career at NASA's Jet Propulsion Laboratory in the Optical Communications Group, first as an intern and then under contract. ",
-  },
-  {
-    name: "Martin Anaya",
-    title: "CIS Professor at El Camino College",
-    img: martinAImage,
-    description:
-      "Lifelong tech & gaming enthusiast. Previously a sysadmin, now a faculty member for the CIS department at El Camino College.",
+      "Started using AI when ChatGPT was first released for my ESL classes to learn better writing and explaining my thoughts in English, slowly making it my everyday tool for learning new skills, planning my projects, and solving complex problems through hands-on projects involving AI-powered software development, digital forensics, application modernization, automation, and content production. My experience focuses on using AI as a smart project manager, turning any random small idea into detailed discussion about the nuances and practical development and problem-solving partner to turn the ideas into real-world projects.",
   },
   {
     name: "Baiyi Zhou",
@@ -131,21 +131,8 @@ If anyone is interested in joining either club, feel free to reach out to me or 
 • Robotics Club: https://discord.gg/8DeXA8xCdP
 • Computing & Cybersecurity Club: https://discord.gg/VNjcEKQqkE`,
   },
-  {
-    name: "Annette Villa",
-    title: "Student at El Camino College",
-    img: annetteVImage,
-    description:
-      "Annette Villa is a second-year student at El Camino College majoring in Manufacturing Engineering. For the past 2 semesters, she has worked as a Teaching Assistant for the CIS Department, determined to find problems to troubleshoot and ways to help students succeed. Previously, Annette was a part of the Google AI Micro-Internship cohort in Fall 2025 where she remotely worked with a team of California community college students and a Google mentor. Together, they utilized and fine-tuned an AI model to create an investment banking app prototype using Google AI Studio. Along with her background in Tech, she is also passionate in hands-on work and the process of creating tangible products, from designing to manufacturing. Her hobbies and skills include CADD modeling in Catia, SolidWorks, and AutoCAD, 3D Printing, designing and drafting, and casual illustration.",
-  },
-  {
-    name: "Muhammad Usmon",
-    title: "Cloud Computing Student at El Camino College",
-    img: muhammadU,
-    description:
-      "Started using AI when ChatGPT was first released for my ESL classes to learn better writing and explaining my thoughts in English, slowly making it my everyday tool for learning new skills, planning my projects, and solving complex problems through hands-on projects involving AI-powered software development, digital forensics, application modernization, automation, and content production. My experience focuses on using AI as a smart project manager, turning any random small idea into detailed discussion about the nuances and practical development and problem-solving partner to turn the ideas into real-world projects.",
-  },
 ];
+
 
 export const keySpeakers = [
   {
