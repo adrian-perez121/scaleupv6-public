@@ -16,7 +16,7 @@ export const workshopItems = [
     bot: cyberSecurityBot,
     title: "Crack the code: Your First Cybersecurity Competition with the NCL",
     location: "Room #102",
-    instructor: "ECC Students, Baiyi Zhou & Annette Villa",
+    instructor: "Baiyi Zhou & Annette Villa, ECC Students",
     description:
       "Attendees will learn what the National Cyber League (NCL) is and how its beginner-friendly season works, from practice challenges to individual and team competitions. They will try a live cryptography challenge, see the skills NCL builds (OSINT, cryptography, forensics, web exploitation, and more), and learn how to join our Spring 2027 NCL team, which placed 1st among California community colleges in Spring 2026.",
   },
@@ -24,7 +24,7 @@ export const workshopItems = [
     bot: caminoBot,
     title: "Real Estate and Technology",
     location: "Room #104",
-    instructor: "Professor, John Yeressian",
+    instructor: "John Yeressian, Professor",
     description:
       "Discover how generative AI, machine learning, and automated workflows are revolutionizing real estate from property marketing and legal contract review to predictive investment analysis, where algorithms spot up-and-coming neighborhoods before they hit headlines. This session explores how IoT-enabled smart homes, PropTech ESG software for tracking carbon footprints, and urban tech for climate-resilient cities are reshaping property valuations, while emphasizing that while AI won't replace real estate agents, agents using AI will replace those who don't by balancing powerful automation with high-touch client trust.",
   },
@@ -32,7 +32,7 @@ export const workshopItems = [
     bot: cloudBot,
     title: "Introduction to Data Science",
     location: "Room #106",
-    instructor: "Professors, Emma Niu & Solomon Russell",
+    instructor: "Emma Niu & Solomon Russell, Professors",
     description:
       "Students will learn about the Data Science program at El Camino College and get hands-on experience using Jupyter Notebooks, an interactive tool for working with data, writing code, and creating visualizations. We'll introduce students to some of the same tools and techniques used in our data science courses, which are based on curriculum developed at UC Berkeley.",
   },
@@ -40,7 +40,7 @@ export const workshopItems = [
     bot: aiBot,
     title: "Agentic AI Robotics & Physical AI on the Edge",
     location: "Room #107",
-    instructor: "Solutions Architect, Rajesh Boppana",
+    instructor: "Rajesh Boppana, Solutions Architect",
     description:
       "This workshop explores the next evolution of artificial intelligence, where AI systems move beyond responding to commands and become autonomous agents capable of perceiving, reasoning, planning, and acting in the physical world. Participants will learn how Agentic AI and Physical AI are transforming robotics, smart devices, industrial automation, and autonomous systems by enabling intelligent decision-making directly at the edge.",
   },
@@ -48,7 +48,7 @@ export const workshopItems = [
     bot: aiBotShiny,
     title: "AI Revolution: The New Reality",
     location: "Room #110",
-    instructor: "ECC Student, Muhammad Usmon",
+    instructor: "Muhammad Usmon, ECC Student",
     description:
       "Discover how Artificial Intelligence is changing the way we work, create, and build our future. Through personal experiences and real-world project demonstrations, this workshop explores how AI can simplify complex tasks, save months of work, and open doors to new opportunities. Participants will learn practical ways to incorporate AI into their everyday lives, academics, and future careers while exploring why understanding this technology today can help them prepare for the industries of tomorrow.",
   },
@@ -57,7 +57,7 @@ export const workshopItems = [
     title:
       "City of Torrance Application Writing and Interview Preparation Workshop",
     location: "Room #202",
-    instructor: "Human Resources Technician, Nico Pietrantonio",
+    instructor: "Nico Pietrantonio, Human Resources Technician",
     description:
       "Join us for an interactive Application Writing and Interview Preparation workshop led by Nico Pietrantonio, Senior Human Resources Technician with the City of Torrance Civil Service Division. In this session, Nico will introduce students to the world of public service careers in local government and break down the key differences between job applications and resumes. Participants will receive hands on coaching to craft strong, effective applications and gain an inside look at the City of Torrance’s Civil Service hiring process. The workshop then concludes with practical interview preparation strategies designed to help students confidently present their strengths and succeed in gaining employment in local government.",
   },
@@ -65,7 +65,7 @@ export const workshopItems = [
     bot: cloudBotShiny,
     title: "Building Apps and Media with Google AI Studio",
     location: "Room #206",
-    instructor: "Professor, Hac Le",
+    instructor: "Hac Le, Professor",
     description:
       "Learn how to use Google AI Studio to build applications with no coding required. You'll also get a brief overview about AI and prompt engineering.",
   },
@@ -73,7 +73,7 @@ export const workshopItems = [
     bot: cyberSecurityBotShiny,
     title: "Hackerman",
     location: "Room #208",
-    instructor: "Professor, Martin Anaya",
+    instructor: "Martin Anaya, Professor",
     description:
       "An introduction to hacking and malware. Guess your own password and become a pro hacker!",
   },
@@ -81,7 +81,7 @@ export const workshopItems = [
     bot: caminoBot,
     title: "Resume Development [Tech Edition]",
     location: "Room #210",
-    instructor: "Career Advisor, Laila Kegler",
+    instructor: "Laila Kegler, Career Advisor",
     description:
       "Create a resume that best reflects you! Join us in an engaging workshop where we examine the purpose of a resume, tips and strategies to create a stellar resume, and additional resources available for career preparation in the tech industry. Feel free to take notes and ask any questions throughout the session.",
   },
@@ -89,7 +89,7 @@ export const workshopItems = [
     bot: networkBotShiny,
     title: "CIS 101",
     location: "Room #304",
-    instructor: "Professor, Jesus Rubio",
+    instructor: "Jesus Rubio, Professor",
     description:
       "This workshop introduces students to the fundamentals of Computer Information Systems (CIS), including basic computer hardware, software, operating systems, networking, and digital technology. Students will gain an understanding of how computers work, explore essential technology skills, and discover how CIS applies to everyday life and future career opportunities.",
   },
@@ -97,7 +97,7 @@ export const workshopItems = [
     bot: codingBotShiny,
     title: "3D Printers and Humanoid Robotics",
     location: "Room #306",
-    instructor: "Professor Joe Weichman",
+    instructor: "Joe Weichman, Professor",
     description:
       "Attendees will learn about how 3D printers are used in robotic systems, including how AI is already being integrated into 3D printers.",
   },
@@ -105,7 +105,7 @@ export const workshopItems = [
     bot: codingBot,
     title: "Say It, Then Ship It",
     location: "Room #308",
-    instructor: "Senior Software Engineer, Cristian Gonzales",
+    instructor: "Cristian Gonzales, Senior Software Engineer",
     description:
       "Students learn to code in plain English: through prompting heuristics, describe a business idea, then drive coding agents to bring your idea to life. At the end of this workshop, you'll leave with a real, working product that you can call your own, ready to show or sell to the world, along with the skills needed to bring any idea to life. No coding experience required!",
   },
@@ -113,13 +113,13 @@ export const workshopItems = [
     bot: caminoBot,
     title: "Bots, Credits, Certificates, and Conduct",
     location: "Room #310",
-    instructor: "Dual Enrollment Coordinator, Michelle Arthur",
+    instructor: "Michelle Arthur, Dual Enrollment Coordinator",
   },
   {
     bot: caminoBot,
     title: "Aerial Drone Safety and Basics",
     location: "MBA Lawn Outside",
-    instructor: "Professor, Richard Perkins",
+    instructor: "Richard Perkins, Professor",
     description:
       "Explore the fundamentals of aerial drones in this introductory, hands-on workshop. Participants will learn the basic components of a drone, essential flight controls, and safe operating practices. The workshop will introduce key drone safety guidelines, responsible flying techniques, and real-world applications of drone technology.",
   },

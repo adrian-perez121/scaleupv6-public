@@ -9,7 +9,7 @@ export const agendaItems = [
     location: "Gymnasium",
     title: "Welcome Remarks",
     speaker:
-      "Katie Sundara, Acting Dean of Business, Design & Applied Technology @ El Camino College & Richard Perkins, Computer Information Systems Professor @ El Camino College",
+      "Katie Sundara, Dean of Business, Design & Applied Technology @ El Camino College & Richard Perkins, Computer Information Systems Professor @ El Camino College",
   },
   {
     time: "9:40 AM - 10:05 AM",

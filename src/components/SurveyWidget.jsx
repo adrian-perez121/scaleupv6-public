@@ -40,7 +40,7 @@ const SurveyWidget = ({ isOpen, onToggle }) => {
                 Please fill out the exit survey if you haven't already!
               </p>
               <a
-                href="https://forms.gle/3SCpLUiqCzWDWmQYA"
+                href="https://tinyurl.com/scaleupv6-exit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="exit-survey-link"
