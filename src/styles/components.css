@@ -84,7 +84,7 @@ h2.section-title {
 .section-title-separator {
   height: 4px;
   width: 100px;
-  background: var(--theme-gradient);
+  background: transparent;
   margin: 0 auto 3rem auto;
   border-radius: 2px;
 }
@@ -942,6 +942,7 @@ h2.section-title {
 .pokedex-tabs-detached {
   display: flex;
   justify-content: center;
+  gap: 0.5rem;
   margin-top: 0.6rem;
 }
 .section-tab {
@@ -1332,5 +1333,95 @@ h2.section-title {
   .section-tab-panel .workshop-td-centered {
     display: block;
     text-align: center;
+  }
+}
+
+.map-frame {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 3px solid var(--pokedex-line);
+  border-radius: 12px;
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.901);
+  overflow: hidden;
+}
+.map-viewport {
+  overflow: hidden;
+  touch-action: none; /* the viewer handles pinch and drag itself */
+  cursor: zoom-in;
+}
+.map-viewport.is-zoomed {
+  cursor: grab;
+}
+.map-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 0 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.map-controls {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.map-controls button {
+  width: 40px;
+  height: 40px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background: var(--pokedex-red-dark);
+  border: 3px solid var(--pokedex-line);
+  border-radius: 10px;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.901);
+  cursor: pointer;
+}
+.map-controls button:hover:not(:disabled) {
+  background: #e0004c;
+}
+.map-controls button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+/* On desktop the map sits inside the regular Pokédex body. On phones it
+   replaces the Pokédex body (red frame, bezel, lights): it runs edge to edge
+   under the tabs, then straight into the footer, for the extra space. */
+@media (max-width: 768px) {
+  .section-tab-panel > .section.map-section {
+    background: none !important;
+    padding: 0 !important;
+  }
+  .section-tab-panel > .section.map-section > .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .section-tab-panel > .section.map-section > .container::before,
+  .section-tab-panel > .section.map-section > .container::after,
+  .map-section::after {
+    display: none;
+  }
+  .map-section .section-title,
+  .map-section .section-title-separator {
+    display: none;
+  }
+  .map-section .map-frame {
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
 }

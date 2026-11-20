@@ -6,12 +6,12 @@ import Workshops from "./components/Workshops";
 import KeynoteSpeakers from "./components/KeynoteSpeakers";
 import WorkshopLeads from "./components/WorkshopLeads";
 import ScavengerHunt from "./components/ScavengerHunt";
+import MapSection from "./components/MapSection";
 import Footer from "./components/Footer";
 import Modal from "./components/Modal";
 import BackToTopButton from "./components/BackToTopButton";
 import SurveyWidget from "./components/SurveyWidget";
 import SectionTabs from "./components/SectionTabs";
-import openMapWindow from "./utils/openMapWindow";
 
 const TABS = [
   { id: "keynote-speakers", label: "Keynote Speakers" },
@@ -19,6 +19,7 @@ const TABS = [
   { id: "workshops", label: "Workshops" },
   { id: "speakers", label: "Workshop Leads & Faculty" },
   { id: "scavenger-hunt", label: "Scavenger Hunt", detached: true },
+  { id: "map", label: "Map", detached: true },
 ];
 
 // The active tab lives in the URL hash so links like /#agenda and the
@@ -74,7 +75,7 @@ const App = () => {
 
   const openMap = (e) => {
     e.stopPropagation();
-    openMapWindow();
+    handleTabChange("map");
   };
 
   return (
@@ -105,6 +106,7 @@ const App = () => {
           <WorkshopLeads onItemClick={handleItemClick} />
         )}
         {activeTab === "scavenger-hunt" && <ScavengerHunt />}
+        {activeTab === "map" && <MapSection />}
       </main>
       <Footer />
       <Modal item={selectedItem} onClose={handleCloseModal} />

@@ -49,7 +49,7 @@
 body[data-theme="light"] {
   /* Pokémon palette (one blue, one yellow, plus reds):
      Blue #3B4CCA, Yellow (Xanthophyll) #B3A125, Digital Red #FF0000, Russian Red #CC0000 */
-  --bg-color: #3b4cca;
+  --bg-color: #7ac6f4;
   --primary-color: #b3a125;
   --secondary-color: #cc0000;
   --text-color: #1a1a1a;
