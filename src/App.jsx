@@ -14,8 +14,8 @@ import SurveyWidget from "./components/SurveyWidget";
 import SectionTabs from "./components/SectionTabs";
 
 const TABS = [
-  { id: "keynote-speakers", label: "Keynote Speakers" },
   { id: "agenda", label: "Agenda" },
+  { id: "keynote-speakers", label: "Keynote Speakers" },
   { id: "workshops", label: "Workshops" },
   { id: "speakers", label: "Workshop Leads & Faculty" },
   { id: "scavenger-hunt", label: "Scavenger Hunt", detached: true },
