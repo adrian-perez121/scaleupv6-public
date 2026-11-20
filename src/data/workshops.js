@@ -114,6 +114,7 @@ export const workshopItems = [
     title: "Bots, Credits, Certificates, and Conduct",
     location: "Room #310",
     instructor: "Michelle Arthur, Dual Enrollment Coordinator",
+    description: "In this interactive workshop, attendees will be asked to pair share, share their insights with others, as well as learn and hear information about short term classes, certificate programs, and support services at El Camino that help you land your first job, or internship; A Q&A will follow."
   },
   {
     bot: caminoBot,

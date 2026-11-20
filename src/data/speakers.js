@@ -18,6 +18,7 @@ import lailaK from "../../assets/images/presenters/lkegler.jpg";
 import solomonR from "../../assets/images/presenters/srussell.png";
 import ElCoBotImage from "../../assets/images/presenters/ScaleUPv6_CaminobotProfilePic.png";
 import jrubioImage from "../../assets/images/presenters/rubio.jpg";
+import michelleAImage from "../../assets/images/presenters/marthur.jpeg"
 
 export const allSpeakers = [
   {
@@ -70,6 +71,19 @@ As he marks his tenth year at the community college, Richard Perkins continues t
     title: "Human Resources Technician at City of Torrance",
     img: nicoImage,
     description: `Nico Pietrantonio is a Senior Human Resources Technician with the City of Torrance and holds a Master of Public Administration from Southern Utah University. With experience in both higher education and public sector human resources, his expertise includes recruitment, training and development, workforce development, and labor agreement interpretation. Nico is the creator of the City's Career Technical Education (CTE) Partnership Program and is a strong advocate for workforce pipeline development, helping connect students and job seekers to meaningful careers in public service.`,
+  },
+  {
+    name: "Michelle Arthur",
+    title: " Coordinator/Supervisor, Dual Enrollment, Early College and K14 at El Camino College",
+    img: michelleAImage,
+    description: `Michelle Arthur is a first-generation college student, El Camino College alumnus, and a first gen grad school student.  She holds a Master’s degree in Counseling from CSU Dominguez Hills and double Bachelors’ degrees from UCLA. Michelle has 20+ years’ experience in K12 and higher education. 
+
+At El Camino College, she currently serves as Coordinator/Supervisor, Dual Enrollment, Early College & K14 Pathways all of which are equity programs designed to increase the participation, persistence, and successful completion rates of historically underrepresented students in higher education while meeting the directive of the California Community Colleges Chancellor’s Office Vision 2030: “…ensuring all high school students complete 12 (or more) units of dual enrollment before the 12th grade.”
+
+Professionally, her tenure has included serving as an economic workforce development manager, an academic advisor, counselor, an outreach director, a financial aid manager, student development director, a conduct officer, a student grievance officer, a founding member of the college’s behavioral intervention team (BIT), and a successful bond campaign coordinator for the college’s first major $398 million-dollar bond (2002). 
+At El Camino College, Michelle is a 2019 Leadership Redondo Alumni and helped raise funds for the team’s culminating class project, “Honoring Amador Espinosa: 56 Years of Legacy and Service”.  Most recently, she concluded her tenure as President and a Parents of POLAHS Students (POPS) Board of Trustee member for the Port of Los Angeles High School (POLAHS) for 2023-2024.
+
+Personally, Michelle served as a Girl Scout (Troop #7825) parent, an LA Harbor Boys & Girls Club volunteer, a Camp Kesem parent, is a 10-year breast cancer survivor/advocate, and a part-time chicken farmer in San Pedro where she resides with her family.`
   },
   {
     name: "Jesus Rubio",
